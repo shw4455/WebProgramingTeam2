@@ -1,0 +1,73 @@
+#problemContainer {
+    width: 100%;
+    height: 200px;
+
+    display: flex;
+
+    border: solid black 1px;
+}
+
+#timeSelectContainer {
+    width: 50%;
+    height: 100%;
+    border: solid black 1px;
+}
+
+#ampmContainer {
+    width: 100%;
+    height: 50%;
+
+    background-color: palegreen;
+}
+
+#radioContainer {
+    width: 25%;
+    height: 100%;
+
+    padding: 5px;
+
+    background-color: red;
+}
+
+.ampmRadioBtn {
+    /* width: 20%; */
+    /* height: 50%; */
+    display: none;
+}
+
+.ampmRadioLabel {
+    width: 100%;
+    height: 50%;
+
+    padding: 10px;
+    margin: 3px 0px;
+
+    display: block;
+    text-align: center;
+
+    border-radius: 100%;
+    border: solid 1px black;
+
+    font-size: 1.2rem;
+
+    /* background-color: pink; */
+}
+
+.ampmRadioLabelSelected {
+    background-color: rgb(0 144 249);
+}
+
+
+
+#timeContainer {
+    width: 100%;
+    height: 50%;
+    border: solid black 1px;
+}
+
+#timeImageContainer {
+    width: 50%;
+    height: 100%;
+
+    object-fit: contain;
+}

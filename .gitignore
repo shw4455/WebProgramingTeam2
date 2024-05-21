@@ -128,3 +128,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+webprograming/src/hwiwon/page/Test.jsx
+/webprograming/src/hwiwon/errorCode
