@@ -19,3 +19,5 @@ onClick = {handleWeatherClick(weather.id)}의 경우 반환값이 onClick으로 
 
 해보고 싶은 것
 [] ProblemText.jsx > isCorrect 클래스 > width, height, top, left를 CSS 변수를 사용해서 수정하기 좋게 변경하기
+
+[] min-width를 주어, UI 깨짐을 방지

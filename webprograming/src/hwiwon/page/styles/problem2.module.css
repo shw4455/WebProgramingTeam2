@@ -16,17 +16,17 @@
 #ampmContainer {
     width: 100%;
     height: 50%;
-
-    background-color: palegreen;
 }
 
 #radioContainer {
     width: 25%;
     height: 100%;
 
+    display: grid;
+    justify-content: center;
+
     padding: 5px;
 
-    background-color: red;
 }
 
 .ampmRadioBtn {
@@ -36,17 +36,16 @@
 }
 
 .ampmRadioLabel {
-    width: 100%;
-    height: 50%;
+    width: 70px;
+    height: 45px;
 
     padding: 10px;
-    margin: 3px 0px;
 
     display: block;
     text-align: center;
 
     border-radius: 100%;
-    border: solid 1px black;
+
 
     font-size: 1.2rem;
 
