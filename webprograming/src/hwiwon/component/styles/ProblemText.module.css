@@ -1,0 +1,32 @@
+/* CDN을 사용한 방법 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+.text {
+    position: relative;
+
+    font-size: 1.5rem;
+
+    font-family: "Noto Sans KR", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-weight: 500;
+    /* font-style: normal; */
+}
+
+.isCorrect {
+    position: absolute;
+
+    --width: 60px;
+    --height: 60px;
+
+    /* top: calc(-(var(--width) / 2));
+    left: calc(-(var(--height) / 2)); */
+
+    top: -30px;
+    left: -30px;
+
+    width: var(--width);
+    height: var(--height);
+
+    border-radius: 100%;
+    border: solid red 4px;
+}
