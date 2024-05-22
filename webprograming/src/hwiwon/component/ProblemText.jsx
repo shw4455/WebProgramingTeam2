@@ -7,7 +7,7 @@ function ProblemText(props) {
       {props.text}
 
       {props.isCorrect ? <div className={styles.isCorrect}></div> : ""}
-      {console.log(props.isCorrect)}
+      {props.isCorrect ? console.log(props.isCorrect) : ""}
     </div>
   );
 }
