@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./styles/problem2.module.css";
 import ProblemText from "../component/ProblemText";
 import clockImg from "./img/clock.jpg";
+import hArrowImg from "./img/hours-arrow.png";
+import mArrowImg from "./img/minute-arrow.png";
 
 function Problem2(props) {
   const [isCorrect, setIsCorret] = useState(false);
@@ -69,50 +71,59 @@ function Problem2(props) {
         isCorrect={isCorrect}
       ></ProblemText>
       <div id={styles.problemContainer}>
-        <div id={styles.timeSelectContainer}>
-          <div id={styles.ampmContainer}>
-            <div id={styles.radioContainer}>
-              <input
-                id="am"
-                className={styles.ampmRadioBtn}
-                type="radio"
-                name="ampm"
-                value="am"
-                checked={selectedAMPM === "am"}
-                onChange={handleRadioChange}
-              />
-              <label for="am" className={styles.ampmRadioLabel}>
-                오전
-              </label>
-              <input
-                id="pm"
-                className={styles.ampmRadioBtn}
-                type="radio"
-                name="ampm"
-                value="pm"
-                checked={selectedAMPM === "pm"}
-                onChange={handleRadioChange}
-              />
-              <label for="pm" className={styles.ampmRadioLabel}>
-                오후
-              </label>
+        <div id={styles.timeSelectAlignContainer}>
+          <div id={styles.timeSelectContainer}>
+            <div id={styles.ampmContainer}>
+              <div id={styles.radioContainer}>
+                <input
+                  id="am"
+                  className={styles.ampmRadioBtn}
+                  type="radio"
+                  name="ampm"
+                  value="am"
+                  checked={selectedAMPM === "am"}
+                  onChange={handleRadioChange}
+                />
+                <label for="am" className={styles.ampmRadioLabel}>
+                  오전
+                </label>
+                <input
+                  id="pm"
+                  className={styles.ampmRadioBtn}
+                  type="radio"
+                  name="ampm"
+                  value="pm"
+                  checked={selectedAMPM === "pm"}
+                  onChange={handleRadioChange}
+                />
+                <label for="pm" className={styles.ampmRadioLabel}>
+                  오후
+                </label>
+              </div>
             </div>
+            <div id={styles.timeContainer}>
+              <div>
+                <input
+                  id="hours"
+                  value={time.hours}
+                  onChange={handleInputChange}
+                />
+                시
+                <input
+                  id="minutes"
+                  value={time.minutes}
+                  onChange={handleInputChange}
+                />
+                분
+              </div>
+            </div>
+            <div></div>
           </div>
-          <div id={styles.timeContainer}>
-            <div id={styles.timeAlignContainer}>
-              <input
-                id="hours"
-                value={time.hours}
-                onChange={handleInputChange}
-              />
-              시
-              <input
-                id="minutes"
-                value={time.minutes}
-                onChange={handleInputChange}
-              />
-              분
-            </div>
+          <div id={styles.timeImgContainer}>
+            <img className={styles.arrowImg} src={hArrowImg}></img>
+            <div className={styles.arrowText}>시침</div>
+            <img className={styles.arrowImg} src={mArrowImg}></img>
+            <div className={styles.arrowText}>분침</div>
           </div>
         </div>
         <img id={styles.timeImageContainer} src={clockImg} alt=""></img>
