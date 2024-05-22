@@ -15,6 +15,32 @@ onClick = {handleWeatherClick(weather.id)}의 경우 반환값이 onClick으로 
 
 [] Problem2에서 const labels = document.querySelectorAll(".ampmRadioLabel");가 안되던 이유가 무엇인가
 
+    const labels = document.querySelectorAll(".ampmRadioLabel");
+    console.log(labels);
+    labels.forEach((label) => label.classList.remove("ampmRadioLabelSelected"));
+
+    는 안되고
+
+    const labels = document.querySelectorAll(`.${styles.ampmRadioLabel}`);
+    console.log(labels);
+    labels.forEach((label) =>
+      label.classList.remove(styles.ampmRadioLabelSelected)
+    );
+    는 된다
+
+    먼저
+    const labels = document.querySelectorAll(".ampmRadioLabel");
+    const labels = document.querySelectorAll(`.${styles.ampmRadioLabel}`);
+    위에 처럼 구현하면, ampmRadioLabel 자체로 입력이 되고
+    아래처럼 구현하면, ampmRadioLabel__xxxxx의 형태로 입력되게 된다
+
+    css.module을 사용하면 styles.className이 className__xxxxx으로 변환되는데
+
+    그 상태에서 document.querySelectorAll(".ampmRadioLabel");로 해주니까 className__xxxxx이 아닌, className으로 입력되서 매핑이 안되었던 것
+
+    document.querySelectorAll(`.${styles.ampmRadioLabel}`);으로 입력하면 className__xxxxx으로 변환되어 입력되어 돌아가는 것
+
+
 [] spread syntax
 
 해보고 싶은 것
