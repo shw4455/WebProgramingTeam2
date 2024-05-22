@@ -4,6 +4,8 @@ import ProblemText from "../component/ProblemText";
 import clockImg from "./img/clock.jpg";
 
 function Problem2(props) {
+  const [isCorrect, setIsCorret] = useState(false);
+
   const [selectedAMPM, setSelectedAMPM] = useState("am"); // 초기 상태 (오전)
 
   useEffect(() => {
@@ -32,8 +34,40 @@ function Problem2(props) {
     setSelectedAMPM(event.target.value);
   };
 
+  const today = new Date();
+
+  const todayHours = today.getHours().toString();
+  const todayMinutes = today.getMinutes().toString();
+
+  const [time, setTime] = useState({ hours: "", minutes: "" });
+
+  const handleInputChange = (event) => {
+    const id = event.target.id;
+    const value = event.target.value;
+
+    setTime({ ...time, [id]: value });
+    console.log("time : ", time);
+
+    // console.log("todayHours", todayHours);
+    // console.log("time.hours", time.hours);
+    // console.log("todayMinutes", todayMinutes);
+    // console.log("time.minutes", time.minutes);
+
+    if (todayHours === time.hours && todayMinutes === time.minutes) {
+      setIsCorret(true);
+      // console.log("isCorrect", isCorrect);
+    } else {
+      setIsCorret(false);
+      // console.log("isCorrect", isCorrect);
+    }
+  };
+
   return (
     <>
+      <ProblemText
+        text="현재 시각을 적고, 오른쪽 시계 안에 시침, 분침으로 시간을 그려보세요"
+        isCorrect={isCorrect}
+      ></ProblemText>
       <div id={styles.problemContainer}>
         <div id={styles.timeSelectContainer}>
           <div id={styles.ampmContainer}>
@@ -47,7 +81,7 @@ function Problem2(props) {
                 checked={selectedAMPM === "am"}
                 onChange={handleRadioChange}
               />
-              <label htmlFor="am" className={styles.ampmRadioLabel}>
+              <label for="am" className={styles.ampmRadioLabel}>
                 오전
               </label>
               <input
@@ -59,12 +93,27 @@ function Problem2(props) {
                 checked={selectedAMPM === "pm"}
                 onChange={handleRadioChange}
               />
-              <label htmlFor="pm" className={styles.ampmRadioLabel}>
+              <label for="pm" className={styles.ampmRadioLabel}>
                 오후
               </label>
             </div>
           </div>
-          <div id={styles.timeContainer}></div>
+          <div id={styles.timeContainer}>
+            <div id={styles.timeAlignContainer}>
+              <input
+                id="hours"
+                value={time.hours}
+                onChange={handleInputChange}
+              />
+              시
+              <input
+                id="minutes"
+                value={time.minutes}
+                onChange={handleInputChange}
+              />
+              분
+            </div>
+          </div>
         </div>
         <img id={styles.timeImageContainer} src={clockImg} alt=""></img>
         <div id=""></div>
