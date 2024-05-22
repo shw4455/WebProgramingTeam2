@@ -13,7 +13,7 @@ onClick = {handleWeatherClick(weather.id)}의 경우 반환값이 onClick으로 
 그럼 onClick={handleWeatherClick}과 같은 방식은 안되는지?
 => 매개변수가 있는 함수는 onClick = {() => handleWeatherClick(weather.id)}처럼 해주면 된다
 
-[] Problem2에서 const labels = document.querySelectorAll(".ampmRadioLabel");가 안되던 이유가 무엇인가
+[x] Problem2에서 const labels = document.querySelectorAll(".ampmRadioLabel");가 안되던 이유가 무엇인가
 
     const labels = document.querySelectorAll(".ampmRadioLabel");
     console.log(labels);
@@ -40,10 +40,11 @@ onClick = {handleWeatherClick(weather.id)}의 경우 반환값이 onClick으로 
 
     document.querySelectorAll(`.${styles.ampmRadioLabel}`);으로 입력하면 className__xxxxx으로 변환되어 입력되어 돌아가는 것
 
-
-[] spread syntax
+[] spread syntax?
 
 해보고 싶은 것
 [] ProblemText.jsx > isCorrect 클래스 > width, height, top, left를 CSS 변수를 사용해서 수정하기 좋게 변경하기
 
+개선 방안
 [] min-width를 주어, UI 깨짐을 방지
+[] ampmContainer 내부에 display grid 요소를 추가해서 UI 개선

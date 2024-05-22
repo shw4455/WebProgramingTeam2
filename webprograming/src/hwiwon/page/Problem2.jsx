@@ -4,6 +4,7 @@ import ProblemText from "../component/ProblemText";
 import clockImg from "./img/clock.jpg";
 import hArrowImg from "./img/hours-arrow.png";
 import mArrowImg from "./img/minute-arrow.png";
+import pivotMArrow from "./img/pivot-minute-arrow.png";
 
 function Problem2(props) {
   const [isCorrect, setIsCorret] = useState(false);
@@ -126,9 +127,14 @@ function Problem2(props) {
             <div className={styles.arrowText}>분침</div>
           </div>
         </div>
-        <img id={styles.timeImageContainer} src={clockImg} alt=""></img>
-        <div id=""></div>
-        <div id=""></div>
+        <div id={styles.timeImageContainer}>
+          <img id={styles.timeImage} src={clockImg} alt=""></img>
+          <div id={styles.clockPivot}>
+            <div id={styles.clockArrowContainer}>
+              <img className={styles.clockArrow} src={pivotMArrow}></img>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
