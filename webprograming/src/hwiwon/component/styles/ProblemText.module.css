@@ -1,6 +1,11 @@
 /* CDN을 사용한 방법 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
+.problemTextContainer {
+    position: relative;
+
+}
+
 .text {
     position: relative;
 

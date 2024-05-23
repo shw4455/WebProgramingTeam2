@@ -101,11 +101,10 @@ function Problem2(props) {
     setClockTime({ ...clockTime, minutes: time });
     console.log("clockTime : ", clockTime);
   };
-
   return (
     <>
       <ProblemText
-        text="현재 시각을 적고, 오른쪽 시계 안에 시침, 분침으로 시간을 그려보세요"
+        text="현재 시각을 적고, 오른쪽 시계 안에 <b style='color:red;'>시침</b>시침, <b style='color:red;'>분침</b>으로 시간을 그려보세요"
         isCorrect={isCorrect}
       ></ProblemText>
       <div id={styles.problemContainer}>
