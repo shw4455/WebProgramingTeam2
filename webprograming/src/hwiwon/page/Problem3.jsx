@@ -3,6 +3,8 @@ import styles from "./styles/problem3.module.css";
 import ProblemText from "../component/ProblemText";
 import Problem3ExampleText from "../component/Problem3ExampleText";
 import ToolTips from "../component/ToolTips";
+import Problem3ExampleText from "../component/Problem3ExampleText";
+import ToolTips from "../component/ToolTips";
 
 function Problem3(props) {
   const [isCorrect, setIsCorret] = useState(false);
@@ -100,5 +102,6 @@ function Problem3(props) {
     </>
   );
 }
+
 
 export default Problem3;

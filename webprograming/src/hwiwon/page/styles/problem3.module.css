@@ -4,6 +4,12 @@
 
 .blankContainer {
     display: flex;
+}.exampleContainer {
+    border: solid 1px black;
+}
+
+.blankContainer {
+    display: flex;
     padding: 10px;
     border-bottom: solid 1px gray;
 }
