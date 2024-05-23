@@ -12,9 +12,10 @@ input {
 
 body {
     margin: 100px;
+    background-color: rgb(195, 195, 195);
 }
 
 * {
     box-sizing: border-box;
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }

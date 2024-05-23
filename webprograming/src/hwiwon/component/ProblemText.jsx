@@ -3,12 +3,12 @@ import styles from "./styles/ProblemText.module.css";
 
 function ProblemText(props) {
   return (
-    <div className={styles.text}>
+    <pre className={styles.text}>
       {props.text}
 
       {props.isCorrect ? <div className={styles.isCorrect}></div> : ""}
       {props.isCorrect ? console.log(props.isCorrect) : ""}
-    </div>
+    </pre>
   );
 }
 

@@ -43,6 +43,7 @@ onClick = {handleWeatherClick(weather.id)}의 경우 반환값이 onClick으로 
 [] array.map
 아래 코드가 안되는 이유 => JSX를 반환하는 부분이 없기 때문에
 {clockArrows.map((arrow) => {
+
 <div>{arrow.id}</div>;
 })}
 
@@ -52,6 +53,7 @@ return <div>{arrow.id}</div>;
 })}
 key를 지정해주거나
 {clockArrows.map((arrow) => (
+
 <div key={arrow.id}>{arrow.id}</div>
 ))}
 
@@ -62,6 +64,9 @@ React에서 JSX 코드를 작성할 때는 블록 안에 있는 표현식을 반
 
 해보고 싶은 것
 [] ProblemText.jsx > isCorrect 클래스 > width, height, top, left를 CSS 변수를 사용해서 수정하기 좋게 변경하기
+
+[] 43bc997ff57031d7b4ddf5eeac8b09e72dba6db8 커밋, 커밋 이름, 시침 분침 이미지 생성으로
+커밋 명 변경하기
 
 개선 방안
 [] min-width를 주어, UI 깨짐을 방지
