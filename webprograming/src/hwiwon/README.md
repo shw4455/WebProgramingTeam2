@@ -40,6 +40,10 @@ onClick = {handleWeatherClick(weather.id)}의 경우 반환값이 onClick으로 
 
     document.querySelectorAll(`.${styles.ampmRadioLabel}`);으로 입력하면 className__xxxxx으로 변환되어 입력되어 돌아가는 것
 
+[x] dangerouslySetInnerHTML을 사용한 방법
+이 방법은 XSS(교차 사이트 스크립팅) 공격에 취약할 수 있으므로, 입력 데이터가 신뢰할 수 있는 경우에만 사용하는 것이 좋습니다.
+
+=> 안전한가?, 정적이고, 사용자가 설정할 수 없는데 안전하지않을까
 [] array.map
 아래 코드가 안되는 이유 => JSX를 반환하는 부분이 없기 때문에
 {clockArrows.map((arrow) => {

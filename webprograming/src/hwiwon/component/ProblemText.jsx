@@ -3,12 +3,16 @@ import styles from "./styles/ProblemText.module.css";
 
 function ProblemText(props) {
   return (
-    <pre className={styles.text}>
-      {props.text}
-
-      {props.isCorrect ? <div className={styles.isCorrect}></div> : ""}
-      {props.isCorrect ? console.log(props.isCorrect) : ""}
-    </pre>
+    <>
+      <pre
+        className={styles.text}
+        dangerouslySetInnerHTML={{ __html: props.text }}
+      ></pre>
+      <div>
+        {props.isCorrect ? <div className={styles.isCorrect}></div> : ""}
+        {props.isCorrect ? console.log(props.isCorrect) : ""}
+      </div>
+    </>
   );
 }
 

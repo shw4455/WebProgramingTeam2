@@ -1,0 +1,7 @@
+.exampleContainer {
+    border: solid 1px black;
+}
+
+.blankContainer {
+    display: flex;
+}
