@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles/problem1.module.css";
 import ProblemText from "../component/ProblemText";
+import ProblemContainer from "../component/ProblemContainer";
 
 function Problem1(props) {
   const today = new Date();
@@ -44,24 +45,30 @@ function Problem1(props) {
   };
 
   return (
-    <div className={styles.problem}>
-      <ProblemText
-        text="오늘의 날짜를 적고 날씨에 동그라미를 하세요."
-        isCorrect={isCorrect}
-      />
-      <div className={styles.problemContainer}>
-        <input id="year" value={userInput.year} onChange={handleInputChange} />
-        년
-        <input
-          id="month"
-          value={userInput.month}
-          onChange={handleInputChange}
+    <ProblemContainer>
+      <div className={styles.problem}>
+        <ProblemText
+          text="오늘의 날짜를 적고 날씨에 동그라미를 하세요."
+          isCorrect={isCorrect}
         />
-        월
-        <input id="day" value={userInput.day} onChange={handleInputChange} />일
-        <button onClick={checkDateMatch}>날짜 확인</button>
+        <div className={styles.problemContainer}>
+          <input
+            id="year"
+            value={userInput.year}
+            onChange={handleInputChange}
+          />
+          년
+          <input
+            id="month"
+            value={userInput.month}
+            onChange={handleInputChange}
+          />
+          월
+          <input id="day" value={userInput.day} onChange={handleInputChange} />
+          일<button onClick={checkDateMatch}>날짜 확인</button>
+        </div>
       </div>
-    </div>
+    </ProblemContainer>
   );
 }
 

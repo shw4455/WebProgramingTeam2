@@ -13,9 +13,8 @@ function App() {
       <Today></Today>
       <Problem1></Problem1>
       <Problem2></Problem2>
-      <Problem3Example></Problem3Example>
-
       <Problem3></Problem3>
+      <Problem3Example></Problem3Example>
       {/* <Test></Test> */}
     </div>
   );

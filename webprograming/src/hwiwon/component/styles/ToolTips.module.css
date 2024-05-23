@@ -1,3 +1,5 @@
 .toolTipsText {
+  /* 내부 요소의 크기만큼, width를 갖게 해주기 위함 */
+  display: inline;
   border-bottom: solid 1px gray;
 }

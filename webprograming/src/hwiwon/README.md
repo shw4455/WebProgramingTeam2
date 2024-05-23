@@ -43,6 +43,25 @@ onClick = {handleWeatherClick(weather.id)}의 경우 반환값이 onClick으로 
 [x] dangerouslySetInnerHTML을 사용한 방법
 이 방법은 XSS(교차 사이트 스크립팅) 공격에 취약할 수 있으므로, 입력 데이터가 신뢰할 수 있는 경우에만 사용하는 것이 좋습니다.
 
+[x] 컴포넌트 사이에 요소 넣는 법
+<ProblemContainer>
+
+  <!-- 다른 컴포넌트 -->
+</ProblemContainer>
+
+function ProblemContainer(props) {
+return (  
+ <div>
+{props.children}
+</div>
+)
+}
+처럼 해주면 된다
+
+[x] span 태그는 기본적으로 인라인 요소이기에 margin 속성을 사용할 수 없다
+
+- 그 외 안되는 속성은?
+
 [] <input key="1" type="text" />처럼, key를 통해, event.target.key를 통한 접근은 불가능한지
 [] key와 id, name의 차이
 => 안전한가?, 정적이고, 사용자가 설정할 수 없는데 안전하지않을까
@@ -79,6 +98,4 @@ React에서 JSX 코드를 작성할 때는 블록 안에 있는 표현식을 반
 [] ampmContainer 내부에 display grid 요소를 추가해서 UI 개선
 
 어디부터 다시 시작을 해야하나
-[] CSS의 position: absolute 배치 기준
-position: absolute 속성은 CSS에서 요소를 일반 문서 흐름에서 제거하고 가장 가까운 위치 조상(position이 static이 아닌 부모 요소)에 상대적으로 위치시킵니다
-이에 대한 테스트 및 이해
+[] 요소가 내부 요소의 크기만큼 width를 갖게 하는 법, 그리고 내가 한건 안되고, 검색해서 나온 결과는 되는 이유, 차이
