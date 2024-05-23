@@ -5,6 +5,7 @@ import clockImg from "./img/clock.jpg";
 import hArrowImg from "./img/hours-arrow.png";
 import mArrowImg from "./img/minute-arrow.png";
 import pivotMArrow from "./img/pivot-minute-arrow.png";
+import pivotHArrow from "./img/pivot-hours-arrow.png";
 
 function Problem2(props) {
   const [isCorrect, setIsCorret] = useState(false);
@@ -42,27 +43,63 @@ function Problem2(props) {
   const todayHours = today.getHours().toString();
   const todayMinutes = today.getMinutes().toString();
 
-  const [time, setTime] = useState({ hours: "", minutes: "" });
+  const [clockTime, setClockTime] = useState({ hours: "", minutes: "" });
 
   const handleInputChange = (event) => {
     const id = event.target.id;
     const value = event.target.value;
 
-    setTime({ ...time, [id]: value });
-    console.log("time : ", time);
+    setClockTime({ ...clockTime, [id]: value });
+    console.log("clockTime : ", clockTime);
 
     // console.log("todayHours", todayHours);
     // console.log("time.hours", time.hours);
     // console.log("todayMinutes", todayMinutes);
     // console.log("time.minutes", time.minutes);
 
-    if (todayHours === time.hours && todayMinutes === time.minutes) {
+    if (todayHours === clockTime.hours && todayMinutes === clockTime.minutes) {
       setIsCorret(true);
       // console.log("isCorrect", isCorrect);
     } else {
       setIsCorret(false);
       // console.log("isCorrect", isCorrect);
     }
+  };
+
+  const clockArrows = [
+    { id: 0 },
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
+    { id: 5 },
+    { id: 6 },
+    { id: 7 },
+    { id: 8 },
+    { id: 9 },
+    { id: 10 },
+    { id: 11 },
+  ];
+
+  // const clockArrows = [];
+  // for (let i = 0; i < 12; i++) {
+  //   clockArrows.push({ id: i + 1 });
+  // }
+
+  const handleHArrowClicked = (event) => {
+    const time = event.target.id;
+    console.log("handleHArrowClicked time : ", time);
+
+    setClockTime({ ...clockTime, hours: time });
+    console.log("clockTime : ", clockTime);
+  };
+
+  const handleMArrowClicked = (event) => {
+    const time = event.target.id * 5;
+    console.log("handleMArrowClicked time : ", time);
+
+    setClockTime({ ...clockTime, minutes: time });
+    console.log("clockTime : ", clockTime);
   };
 
   return (
@@ -106,13 +143,13 @@ function Problem2(props) {
               <div>
                 <input
                   id="hours"
-                  value={time.hours}
+                  value={clockTime.hours}
                   onChange={handleInputChange}
                 />
                 시
                 <input
                   id="minutes"
-                  value={time.minutes}
+                  value={clockTime.minutes}
                   onChange={handleInputChange}
                 />
                 분
@@ -130,9 +167,40 @@ function Problem2(props) {
         <div id={styles.timeImageContainer}>
           <img id={styles.timeImage} src={clockImg} alt=""></img>
           <div id={styles.clockPivot}>
-            <div id={styles.clockArrowContainer}>
-              <img className={styles.clockArrow} src={pivotMArrow}></img>
-            </div>
+            {clockArrows.map((arrow) => (
+              <div
+                id={arrow.id}
+                className={styles.clockArrowContainer}
+                style={{
+                  transform: `rotate(${arrow.id * 30}deg)`,
+                }}
+              >
+                <img
+                  id={arrow.id}
+                  className={styles.clockMinuteArrow}
+                  src={pivotMArrow}
+                  onClick={handleMArrowClicked}
+                ></img>
+              </div>
+            ))}
+            {clockArrows.map((arrow) => (
+              <div
+                id={arrow.id}
+                className={styles.clockArrowContainer}
+                style={{
+                  transform: `rotate(${arrow.id * 30}deg)`,
+                }}
+              >
+                <img
+                  id={arrow.id}
+                  className={styles.clockHoursArrow}
+                  src={pivotHArrow}
+                  onClick={handleHArrowClicked}
+                ></img>
+              </div>
+            ))}
+            {/* <div className={styles.clockArrowContainer}>
+              <img className={styles.clockMinuteArrow} src={pivotMArrow}></img> */}
           </div>
         </div>
       </div>

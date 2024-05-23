@@ -104,6 +104,8 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+
+
 }
 
 #clockPivot {
@@ -113,15 +115,49 @@
 
 }
 
-#clockArrowContainer {
-    position: relative;
+.clockArrowContainer {
+    position: absolute;
     width: 0px;
     height: 0px;
+
+    transform: rotate(0deg);
 }
 
-.clockArrow {
+.clockMinuteArrow {
     position: absolute;
+    top: -29px;
+    left: 0px;
+    transform: translate(-54%, -50.5%);
+    width: 17px;
+    opacity: 0;
+}
 
-    transform: translate(-54%, -50.5%) rotate(90deg);
-    width: 25px;
+.clockMinuteArrow:hover {
+    opacity: 1;
+}
+
+.clockHoursArrow {
+    position: absolute;
+    top: -16px;
+    left: 1px;
+    transform: translate(-54%, -50.5%);
+    width: 17px;
+    opacity: 0;
+}
+
+.clockHoursArrow:hover {
+    opacity: 1;
+}
+
+/* 
+<img
+id={arrow.id}
+style={{ transform: "translate(-54%, -50.5%) rotate(0deg)" }}
+className={styles.clockArrow}
+src={pivotMArrow}
+></img>; 
+*/
+
+.test {
+    background-color: red;
 }

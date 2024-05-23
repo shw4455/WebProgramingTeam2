@@ -40,6 +40,24 @@ onClick = {handleWeatherClick(weather.id)}의 경우 반환값이 onClick으로 
 
     document.querySelectorAll(`.${styles.ampmRadioLabel}`);으로 입력하면 className__xxxxx으로 변환되어 입력되어 돌아가는 것
 
+[] array.map
+아래 코드가 안되는 이유 => JSX를 반환하는 부분이 없기 때문에
+{clockArrows.map((arrow) => {
+<div>{arrow.id}</div>;
+})}
+
+return을 넣어주거나
+{clockArrows.map((arrow) => {
+return <div>{arrow.id}</div>;
+})}
+key를 지정해주거나
+{clockArrows.map((arrow) => (
+<div key={arrow.id}>{arrow.id}</div>
+))}
+
+React에서 JSX 코드를 작성할 때는 블록 안에 있는 표현식을 반환하지 않아도 됩니다
+
+[] array, object 관련 함수 한 번 훑기
 [] spread syntax?
 
 해보고 싶은 것
@@ -48,3 +66,8 @@ onClick = {handleWeatherClick(weather.id)}의 경우 반환값이 onClick으로 
 개선 방안
 [] min-width를 주어, UI 깨짐을 방지
 [] ampmContainer 내부에 display grid 요소를 추가해서 UI 개선
+
+어디부터 다시 시작을 해야하나
+[] CSS의 position: absolute 배치 기준
+position: absolute 속성은 CSS에서 요소를 일반 문서 흐름에서 제거하고 가장 가까운 위치 조상(position이 static이 아닌 부모 요소)에 상대적으로 위치시킵니다
+이에 대한 테스트 및 이해
