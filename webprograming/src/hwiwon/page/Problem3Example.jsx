@@ -4,15 +4,16 @@ import ProblemText from "../component/ProblemText";
 import Problem3ExampleText from "../component/Problem3ExampleText";
 import ToolTips from "../component/ToolTips";
 import ProblemContainer from "../component/ProblemContainer";
+import ProblemTitle from "../component/ProblemTitle";
 
 function Problem3Example(props) {
   return (
     <>
     
       <ProblemContainer>
+      <ProblemTitle text="생활정보 기억하기"/>
         <ProblemText
-          text={`생활정보 기억하기
-다음은 알아두면 유용한 <b style='color:red;'>생활정보</b>입니다.
+          text={`다음은 알아두면 유용한 <b style='color:red;'>생활정보</b>입니다.
 소리내어 읽어보세요.`}
         ></ProblemText>
         <div className={styles.exampleContainer}>

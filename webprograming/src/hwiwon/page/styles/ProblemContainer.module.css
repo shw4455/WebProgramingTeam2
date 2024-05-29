@@ -1,0 +1,17 @@
+.AlignContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+
+    justify-content: center;
+}
+
+.ProblemContainer {
+    /* min-width가 없어도, 이미지들의 크기 때문에, width가 특정 width 이상 작아지진 않음 */
+    min-width: 600px ;
+    max-width: 900px;
+    background-color: white;
+
+    margin: 0px 50px;
+}
+

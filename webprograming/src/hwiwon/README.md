@@ -87,15 +87,25 @@ React에서 JSX 코드를 작성할 때는 블록 안에 있는 표현식을 반
 [] array, object 관련 함수 한 번 훑기
 [] spread syntax?
 
+[] CSSS 파일 이름 맞춰주기
+
 해보고 싶은 것
 [] ProblemText.jsx > isCorrect 클래스 > width, height, top, left를 CSS 변수를 사용해서 수정하기 좋게 변경하기
 
 [] 43bc997ff57031d7b4ddf5eeac8b09e72dba6db8 커밋, 커밋 이름, 시침 분침 이미지 생성으로
 커밋 명 변경하기
 
+[] https://velog.io/@wonder1247/inline%EC%9A%94%EC%86%8C%EC%99%80-block%EC%9A%94%EC%86%8C%EC%97%90-margin-%EC%A0%81%EC%9A%A9#%EB%B8%94%EB%A1%9D%EC%9A%94%EC%86%8C%EC%9D%98-%EB%A7%88%EC%A7%84%EC%83%81%EC%87%84margin-collapsing
 개선 방안
 [] min-width를 주어, UI 깨짐을 방지
 [] ampmContainer 내부에 display grid 요소를 추가해서 UI 개선
 
 어디부터 다시 시작을 해야하나
-[] 요소가 내부 요소의 크기만큼 width를 갖게 하는 법, 그리고 내가 한건 안되고, 검색해서 나온 결과는 되는 이유, 차이
+[x] 요소가 내부 요소의 크기만큼 width를 갖게 하는 법, 그리고 내가 한건 안되고, 검색해서 나온 결과는 되는 이유, 차이
+  일단
+  ToolTips.module.css > toolTipsText >  width: max-content;를 주어 해결
+  1. inline 요소는 margin, top, bottom이 적용되지 않는다
+  
+  [] width: auto가 적용되지 않은 이유
+  https://yeko90.tistory.com/entry/css-%EA%B8%B0%EC%B4%88-width-auto-%EC%99%80-width-100-%EC%B0%A8%EC%9D%B4
+

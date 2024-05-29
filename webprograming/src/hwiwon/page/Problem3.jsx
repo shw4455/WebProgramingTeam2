@@ -3,6 +3,7 @@ import styles from "./styles/problem3.module.css";
 import ProblemText from "../component/ProblemText";
 import ProblemContainer from "../component/ProblemContainer";
 import ToolTips from "../component/ToolTips";
+import ProblemTitle from "../component/ProblemTitle";
 // import Problem3ExampleText from "../component/Problem3ExampleText";
 
 function Problem3(props) {
@@ -63,6 +64,7 @@ function Problem3(props) {
   return (
     <>
       <ProblemContainer>
+      <ProblemTitle text="생활정보 기억하기"/>
         <ProblemText
           text={`앞서 기억해 둔 <b style='color:red;'>생활정보</b>의 빈칸을 채워보세요.`}
           isCorrect={isCorrect}

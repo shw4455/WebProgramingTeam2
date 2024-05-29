@@ -7,6 +7,7 @@ import hArrowImg from "./img/hours-arrow.png";
 import mArrowImg from "./img/minute-arrow.png";
 import pivotMArrow from "./img/pivot-minute-arrow.png";
 import pivotHArrow from "./img/pivot-hours-arrow.png";
+import ProblemTitle from "../component/ProblemTitle";
 
 function Problem2(props) {
   const [isCorrect, setIsCorret] = useState(false);

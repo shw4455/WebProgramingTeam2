@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./styles/problem1.module.css";
 import ProblemText from "../component/ProblemText";
 import ProblemContainer from "../component/ProblemContainer";
+import ProblemTitle from "../component/ProblemTitle";
 
 function Problem1(props) {
   const today = new Date();
@@ -47,6 +48,7 @@ function Problem1(props) {
   return (
     <ProblemContainer>
       <div className={styles.problem}>
+
         <ProblemText
           text="오늘의 날짜를 적고 날씨에 동그라미를 하세요."
           isCorrect={isCorrect}
