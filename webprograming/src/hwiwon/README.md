@@ -50,7 +50,8 @@ onClick = {handleWeatherClick(weather.id)}의 경우 반환값이 onClick으로 
 </ProblemContainer>
 
 function ProblemContainer(props) {
-return (  
+return (
+
  <div>
 {props.children}
 </div>
@@ -89,6 +90,8 @@ React에서 JSX 코드를 작성할 때는 블록 안에 있는 표현식을 반
 
 [] CSSS 파일 이름 맞춰주기
 
+[] 함수 안과 바깥에 선언하는것 어떤 차이가 있는가
+
 해보고 싶은 것
 [] ProblemText.jsx > isCorrect 클래스 > width, height, top, left를 CSS 변수를 사용해서 수정하기 좋게 변경하기
 
@@ -96,16 +99,23 @@ React에서 JSX 코드를 작성할 때는 블록 안에 있는 표현식을 반
 커밋 명 변경하기
 
 [] https://velog.io/@wonder1247/inline%EC%9A%94%EC%86%8C%EC%99%80-block%EC%9A%94%EC%86%8C%EC%97%90-margin-%EC%A0%81%EC%9A%A9#%EB%B8%94%EB%A1%9D%EC%9A%94%EC%86%8C%EC%9D%98-%EB%A7%88%EC%A7%84%EC%83%81%EC%87%84margin-collapsing
+
+[] css.module에서는 > 등과 같은 결합자 사용이 안된다
+
 개선 방안
-[] min-width를 주어, UI 깨짐을 방지
+[x] min-width를 주어, UI 깨짐을 방지
 [] ampmContainer 내부에 display grid 요소를 추가해서 UI 개선
 
 어디부터 다시 시작을 해야하나
 [x] 요소가 내부 요소의 크기만큼 width를 갖게 하는 법, 그리고 내가 한건 안되고, 검색해서 나온 결과는 되는 이유, 차이
-  일단
-  ToolTips.module.css > toolTipsText >  width: max-content;를 주어 해결
-  1. inline 요소는 margin, top, bottom이 적용되지 않는다
-  
-  [] width: auto가 적용되지 않은 이유
-  https://yeko90.tistory.com/entry/css-%EA%B8%B0%EC%B4%88-width-auto-%EC%99%80-width-100-%EC%B0%A8%EC%9D%B4
+일단
+ToolTips.module.css > toolTipsText > width: max-content;를 주어 해결
 
+1. inline 요소는 margin, top, bottom이 적용되지 않는다
+
+[] width: auto가 적용되지 않은 이유
+https://yeko90.tistory.com/entry/css-%EA%B8%B0%EC%B4%88-width-auto-%EC%99%80-width-100-%EC%B0%A8%EC%9D%B4
+
+오류
+[] console.log가 2번 출력 되는 것
+strictmode가 검사를 위해 2번 렌더링 하기 때문, 지워주면 해결된다
