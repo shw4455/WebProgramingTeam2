@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles/problem3.module.css";
 import ProblemText from "../component/ProblemText";
 import ProblemContainer from "../component/ProblemContainer";
@@ -33,6 +33,8 @@ function Problem3(props) {
     "칼",
   ];
 
+  console.log(blankAnswers);
+
   const handleInputChange = (event) => {
     const key = event.target.getAttribute("data-key");
     console.log("key", key);
@@ -41,7 +43,9 @@ function Problem3(props) {
     setUserInput({ ...userInput, [key]: useInputText });
 
     console.log("userInput", userInput);
+  };
 
+  const checkDataMatch = () => {
     if (
       userInput[0] === blankAnswers[0] &&
       userInput[1] === blankAnswers[1] &&
@@ -61,10 +65,13 @@ function Problem3(props) {
     }
   };
 
+  useEffect(() => {
+    checkDataMatch();
+  }, [userInput]);
   return (
     <>
       <ProblemContainer>
-      <ProblemTitle text="생활정보 기억하기"/>
+        <ProblemTitle text="생활정보 기억하기" />
         <ProblemText
           text={`앞서 기억해 둔 <b style='color:red;'>생활정보</b>의 빈칸을 채워보세요.`}
           isCorrect={isCorrect}
@@ -93,7 +100,7 @@ function Problem3(props) {
             <input data-key="5" type="text" onChange={handleInputChange} />
             <div>, </div>
             <input data-key="6" type="text" onChange={handleInputChange} />
-            <div>) 는</div>
+            <div>) 는 </div>
             <input data-key="7" type="text" onChange={handleInputChange} />
             <div>를 바른 후</div>
             <input data-key="8" type="text" onChange={handleInputChange} />

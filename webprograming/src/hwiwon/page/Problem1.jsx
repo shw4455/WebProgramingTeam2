@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles/problem1.module.css";
 import ProblemText from "../component/ProblemText";
 import ProblemContainer from "../component/ProblemContainer";
@@ -11,18 +11,31 @@ function Problem1(props) {
   const todayMonth = (today.getMonth() + 1).toString();
   const todayDay = today.getDate().toString();
 
+  console.log("todayYear : ", todayYear);
+  console.log("todayMonth : ", todayMonth);
+  console.log("todayDay : ", todayDay);
+
   const [userInput, setUserInput] = useState({ year: "", month: "", day: "" });
 
   const [isCorrect, setIsCorret] = useState(false);
+
+  useEffect(() => {
+    checkDateMatch();
+  }, [userInput]);
 
   const handleInputChange = (event) => {
     // target에서 name과 value 값을 받아오기
     const id = event.target.id;
     const value = event.target.value;
-
+    console.log("value : ", value);
     // 얕은 복사 이후 올바른 key에 value 넣기
-    setUserInput({ ...userInput, [id]: value });
+    // setUserInput({ ...userInput, [id]: value });
     // setUserInput({ ...userInput, id: value }); // 처럼 쓰게 되면, id라는 새로운 키값을 만들게 된다
+
+    setUserInput((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }));
     console.log("userInput : ", userInput);
   };
 
@@ -48,7 +61,6 @@ function Problem1(props) {
   return (
     <ProblemContainer>
       <div className={styles.problem}>
-
         <ProblemText
           text="오늘의 날짜를 적고 날씨에 동그라미를 하세요."
           isCorrect={isCorrect}
@@ -67,7 +79,7 @@ function Problem1(props) {
           />
           월
           <input id="day" value={userInput.day} onChange={handleInputChange} />
-          일<button onClick={checkDateMatch}>날짜 확인</button>
+          일
         </div>
       </div>
     </ProblemContainer>

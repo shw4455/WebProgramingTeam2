@@ -15,17 +15,13 @@ function Problem2(props) {
   const [selectedAMPM, setSelectedAMPM] = useState("am"); // 초기 상태 (오전)
 
   useEffect(() => {
-    console.log("handleRadioChange, selectedAMPM :", selectedAMPM);
-
     // 선택된 라벨 찾기
     const selectedLabel = document.querySelector(
       `label[for="${selectedAMPM}"]`
     );
-    console.log(selectedLabel);
 
     // 전체 selected-label 클래스 제거 (선택된 상태 유지를 위해 선택 해제 시 필요)
     const labels = document.querySelectorAll(`.${styles.ampmRadioLabel}`);
-    console.log(labels);
     labels.forEach((label) =>
       label.classList.remove(styles.ampmRadioLabelSelected)
     );
@@ -52,7 +48,6 @@ function Problem2(props) {
     const value = event.target.value;
 
     setClockTime({ ...clockTime, [id]: value });
-    console.log("clockTime : ", clockTime);
 
     // console.log("todayHours", todayHours);
     // console.log("time.hours", time.hours);
@@ -61,10 +56,8 @@ function Problem2(props) {
 
     if (todayHours === clockTime.hours && todayMinutes === clockTime.minutes) {
       setIsCorret(true);
-      // console.log("isCorrect", isCorrect);
     } else {
       setIsCorret(false);
-      // console.log("isCorrect", isCorrect);
     }
   };
 
@@ -88,26 +81,71 @@ function Problem2(props) {
   //   clockArrows.push({ id: i + 1 });
   // }
 
-  const handleHArrowClicked = (event) => {
-    const time = event.target.id;
-    console.log("handleHArrowClicked time : ", time);
+  const [prevHArrow, setPrevHArrow] = useState(null); // 이전 선택된 요소
+  const [currHArrow, setCurrHArrow] = useState(null); // 현재 선택된 요소
 
-    setClockTime({ ...clockTime, hours: time });
-    console.log("clockTime : ", clockTime);
+  const handleHArrowClicked = (event) => {
+    const time = event.target.id * 5;
+    const newCurrHArrow = event.target;
+    console.log("prevHArrow : ", prevHArrow);
+    console.log("currHArrow : ", currHArrow);
+    // 이전 선택된 요소 투명도 조절
+    if (prevHArrow) {
+      prevHArrow.classList.remove(styles.show);
+    } // useEffect를 사용하면서 없어도 되는 부분
+
+    // 현재 선택된 요소 투명도 조절
+    newCurrHArrow.classList.add(styles.show);
+
+    // 상태값 업데이트
+    setClockTime({ ...clockTime, minutes: time });
+    setPrevHArrow(currHArrow);
+    setCurrHArrow(newCurrHArrow);
   };
+
+  // `useEffect` Hook을 사용하여 이전 선택된 요소 투명도 제어
+  useEffect(() => {
+    // 이전 선택된 요소 투명도 조절
+    if (prevHArrow) {
+      prevHArrow.classList.remove(styles.show);
+    } // useEffect를 사용하면서 없어도 되는 부분
+  }, [prevHArrow]); // `prevMArrow` 상태값 변화 시 실행
+
+  const [prevMArrow, setPrevMArrow] = useState(null); // 이전 선택된 요소
+  const [currMArrow, setCurrMArrow] = useState(null); // 현재 선택된 요소
 
   const handleMArrowClicked = (event) => {
-    const time = event.target.id * 5;
-    console.log("handleMArrowClicked time : ", time);
+    const time = event.target.id;
+    const newCurrMArrow = event.target;
+    console.log("prevMArrow : ", prevMArrow);
+    console.log("currMArrow : ", currMArrow);
+    // 이전 선택된 요소 투명도 조절
+    if (prevMArrow) {
+      prevMArrow.classList.remove(styles.show);
+    } // useEffect를 사용하면서 없어도 되는 부분
 
-    setClockTime({ ...clockTime, minutes: time });
-    console.log("clockTime : ", clockTime);
+    // 현재 선택된 요소 투명도 조절
+    newCurrMArrow.classList.add(styles.show);
+
+    // 상태값 업데이트
+    setClockTime({ ...clockTime, hours: time });
+    setPrevMArrow(currMArrow);
+    setCurrMArrow(newCurrMArrow);
   };
+
+  // `useEffect` Hook을 사용하여 이전 선택된 요소 투명도 제어
+  useEffect(() => {
+    // 이전 선택된 요소 투명도 조절
+    if (prevMArrow) {
+      prevMArrow.classList.remove(styles.show);
+    } // useEffect를 사용하면서 없어도 되는 부분
+  }, [prevMArrow]); // `prevMArrow` 상태값 변화 시 실행
+
   return (
     <>
       <ProblemContainer>
         <ProblemText
-          text="현재 시각을 적고, 오른쪽 시계 안에 <b style='color:red;'>시침</b>시침, <b style='color:red;'>분침</b>으로 시간을 그려보세요."
+          text="현재 시각을 적고, 오른쪽 시계 안에 <b style='color:red;'>시침</b>, <b style='color:red;'>분침</b>으로 시간을 그려보세요."
           isCorrect={isCorrect}
         ></ProblemText>
         <div id={styles.problemContainer}>

@@ -152,14 +152,13 @@
     opacity: 1;
 }
 
-/* 
-<img
-id={arrow.id}
-style={{ transform: "translate(-54%, -50.5%) rotate(0deg)" }}
-className={styles.clockArrow}
-src={pivotMArrow}
-></img>; 
-*/
+.show {
+    opacity: 1
+}
+
+.hide {
+    opacity: 0;
+}
 
 .test {
     background-color: red;

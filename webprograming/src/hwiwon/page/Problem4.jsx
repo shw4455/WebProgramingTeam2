@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-// import styles from "./styles/Problem4.module.css";
+import React, { useEffect, useState } from "react";
 import ProblemText from "../component/ProblemText";
 import ProblemContainer from "../component/ProblemContainer";
 import ToolTips from "../component/ToolTips";
@@ -8,9 +7,6 @@ import styles from "./styles/problem4.module.css";
 import chickenImg from "./img/chicken.png";
 import bicycleImg from "./img/bicycle.png";
 import glassesImg from "./img/glasses.png";
-
-// 배열 만들고, 초기화, 랜덤함수를 사용해서, 나눈 값으로 초기화
-// 그에 맞는 이미지를 생성, 인풋에 배열 안에 값의 개수를 세어서, 정확히 입력하면, 정답!
 
 function Problem4(props) {
   const [isCorrect, setIsCorret] = useState(false);
@@ -64,32 +60,33 @@ function Problem4(props) {
     const glasses = imgAnswers["2"];
     const bicycle = imgAnswers["3"];
 
-    console.log('imgAnswers["1"]) :', typeof imgAnswers["1"]);
-    console.log('imgAnswers["2"]) :', typeof imgAnswers["2"]);
-    console.log('imgAnswers["3"]) :', typeof imgAnswers["3"]);
+    // console.log('imgAnswers["1"]) :', typeof imgAnswers["1"]);
+    // console.log('imgAnswers["2"]) :', typeof imgAnswers["2"]);
+    // console.log('imgAnswers["3"]) :', typeof imgAnswers["3"]);
 
-    console.log("userInput.chicken : ", typeof userInput.chicken);
-    console.log("userInput.glasses : ", typeof userInput.glasses);
-    console.log("userInput.bicycle : ", typeof userInput.bicycle);
+    // console.log("userInput.chicken : ", typeof userInput.chicken);
+    // console.log("userInput.glasses : ", typeof userInput.glasses);
+    // console.log("userInput.bicycle : ", typeof userInput.bicycle);
 
     if (
       chicken === userInput.chicken &&
       glasses === userInput.glasses &&
       bicycle === userInput.bicycle
     ) {
-      console.log("정답");
       setIsCorret(true);
     } else {
-      console.log("오류");
       setIsCorret(false);
     }
   };
 
   const imgNumbers = generateRandomArray(16, 3);
-  console.log(imgNumbers);
 
   const imgAnswers = countNumbers(imgNumbers);
   console.log(imgAnswers);
+
+  useEffect(() => {
+    checkDataMatch();
+  }, [userInput]);
 
   return (
     <ProblemContainer>

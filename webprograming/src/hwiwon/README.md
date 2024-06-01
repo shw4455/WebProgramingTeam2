@@ -105,11 +105,22 @@ React에서 JSX 코드를 작성할 때는 블록 안에 있는 표현식을 반
 개선 방안
 [x] min-width를 주어, UI 깨짐을 방지
 [] ampmContainer 내부에 display grid 요소를 추가해서 UI 개선
+[x] input 입력시 스페이스바 불러야 상태가 입력되는 현상
+리액트의 비동기 동작으로 인한 현상
+useEffect로 의존성 변수를 두고, 이후 정답체크를 해주면 된다
 
+[] iscorrect useState 이외에 다른 방법으로 구현 > 정답 이후, iscorrect 상태 변경으로 인한, 정답 초기화(리렌더링)
+
+[] blank 입력칸의 크기를 지정할 수 있도록
 어디부터 다시 시작을 해야하나
-[x] 요소가 내부 요소의 크기만큼 width를 갖게 하는 법, 그리고 내가 한건 안되고, 검색해서 나온 결과는 되는 이유, 차이
-일단
-ToolTips.module.css > toolTipsText > width: max-content;를 주어 해결
+
+[x] 시계 클릭하고 나면, 선택된 요소는 남아있도록
+처음에는 useEffect를 사용해서 만들어주려고 했으나
+과도한 사용 및 가독성 저하 때문에 다른 방법을 생각해 보다가
+잘 안되어서 useEffect로 다시 만들게 되었고
+자바 스크립트 코드를 이용해서 인라인 스타일을 직접적으로 바꿔주게 되면
+css hover 기능과 충돌하여 올바르게 동작하지 않았기 때문에
+인라인 스타일을 변경해 주는 대신 csx 스타일 클래스를 추가하고 삭제해 주는 방식으로 구현했다
 
 1. inline 요소는 margin, top, bottom이 적용되지 않는다
 
@@ -117,5 +128,5 @@ ToolTips.module.css > toolTipsText > width: max-content;를 주어 해결
 https://yeko90.tistory.com/entry/css-%EA%B8%B0%EC%B4%88-width-auto-%EC%99%80-width-100-%EC%B0%A8%EC%9D%B4
 
 오류
-[] console.log가 2번 출력 되는 것
+[x] console.log가 2번 출력 되는 것
 strictmode가 검사를 위해 2번 렌더링 하기 때문, 지워주면 해결된다
