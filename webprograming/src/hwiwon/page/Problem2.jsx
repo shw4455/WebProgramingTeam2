@@ -17,7 +17,7 @@ function Problem2(props) {
   useEffect(() => {
     // 선택된 라벨 찾기
     const selectedLabel = document.querySelector(
-      `label[for="${selectedAMPM}"]`
+      `label[htmlFor="${selectedAMPM}"]`
     );
 
     // 전체 selected-label 클래스 제거 (선택된 상태 유지를 위해 선택 해제 시 필요)
@@ -159,7 +159,7 @@ function Problem2(props) {
                     checked={selectedAMPM === "am"}
                     onChange={handleRadioChange}
                   />
-                  <label for="am" className={styles.ampmRadioLabel}>
+                  <label htmlFor="am" className={styles.ampmRadioLabel}>
                     오전
                   </label>
                   <input
@@ -171,7 +171,7 @@ function Problem2(props) {
                     checked={selectedAMPM === "pm"}
                     onChange={handleRadioChange}
                   />
-                  <label for="pm" className={styles.ampmRadioLabel}>
+                  <label htmlFor="pm" className={styles.ampmRadioLabel}>
                     오후
                   </label>
                 </div>
