@@ -50,7 +50,6 @@ function Problem4(props) {
     // const valueInt = value.parseInt(value);
 
     setUserInput({ ...userInput, [id]: value });
-    console.log(userInput);
 
     checkDataMatch();
   };
@@ -74,25 +73,21 @@ function Problem4(props) {
       bicycle === userInput.bicycle
     ) {
       setIsCorret(true);
-      console.log("정답");
     } else {
       setIsCorret(false);
-      console.log("오답");
     }
   };
 
-  useEffect(() => {
-    console.log("컴포넌트 리렌더링");
-  });
+  // useEffect(() => {
+  //   console.log("컴포넌트 리렌더링");
+  // });
 
   const [imgNumbers, setImgNumbers] = useState(generateRandomArray(16, 3));
-
-  // const imgAnswers = countNumbers(imgNumbers);
 
   // useState를 사용함으로서 정답을 고정
   const [imgAnswers, setImgAnswers] = useState(countNumbers(imgNumbers));
 
-  console.log(imgAnswers);
+  console.log("imgAnswers : ", imgAnswers);
 
   useEffect(() => {
     checkDataMatch();

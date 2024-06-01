@@ -16,10 +16,10 @@ function App() {
     <div className="App">
       <ProblemContainer>
         {/* <Today></Today> */}
-        {/* <Problem1></Problem1> */}
-        {/* <Problem2></Problem2> */}
-        {/* <Problem3></Problem3> */}
-        {/* <Problem3Example></Problem3Example> */}
+        <Problem1></Problem1>
+        <Problem2></Problem2>
+        <Problem3></Problem3>
+        <Problem3Example></Problem3Example>
         <Problem4></Problem4>
         {/* <Test01></Test01> */}
       </ProblemContainer>

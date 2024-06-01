@@ -21,46 +21,63 @@ function Problem3(props) {
     "",
   ]);
 
+  // const blankAnswers = [
+  //   "물파스",
+  //   "아세톤",
+  //   "밀가루",
+  //   "고무줄",
+  //   "눈",
+  //   "고추",
+  //   "양파",
+  //   "올리브유",
+  //   "칼",
+  // ];
   const blankAnswers = [
-    "물파스",
-    "아세톤",
-    "밀가루",
-    "고무줄",
-    "눈",
-    "고추",
-    "양파",
-    "올리브유",
-    "칼",
+    ["물파스", 3],
+    ["아세톤", 3],
+    ["밀가루", 3],
+    ["고무줄", 3],
+    ["눈", 1],
+    ["고추", 2],
+    ["양파", 2],
+    ["올리브유", 4],
+    ["칼", 1],
   ];
 
-  console.log(blankAnswers);
+  console.log(
+    "blankAnswers : ",
+    blankAnswers[0][0],
+    blankAnswers[1][0],
+    blankAnswers[2][0],
+    blankAnswers[3][0],
+    blankAnswers[4][0],
+    blankAnswers[5][0],
+    blankAnswers[6][0],
+    blankAnswers[7][0],
+    blankAnswers[8][0]
+  );
 
   const handleInputChange = (event) => {
     const key = event.target.getAttribute("data-key");
-    console.log("key", key);
     const useInputText = event.target.value;
 
     setUserInput({ ...userInput, [key]: useInputText });
-
-    console.log("userInput", userInput);
   };
 
   const checkDataMatch = () => {
     if (
-      userInput[0] === blankAnswers[0] &&
-      userInput[1] === blankAnswers[1] &&
-      userInput[2] === blankAnswers[2] &&
-      userInput[3] === blankAnswers[3] &&
-      userInput[4] === blankAnswers[4] &&
-      userInput[5] === blankAnswers[5] &&
-      userInput[6] === blankAnswers[6] &&
-      userInput[7] === blankAnswers[7] &&
-      userInput[8] === blankAnswers[8]
+      userInput[0] === blankAnswers[0][0] &&
+      userInput[1] === blankAnswers[1][0] &&
+      userInput[2] === blankAnswers[2][0] &&
+      userInput[3] === blankAnswers[3][0] &&
+      userInput[4] === blankAnswers[4][0] &&
+      userInput[5] === blankAnswers[5][0] &&
+      userInput[6] === blankAnswers[6][0] &&
+      userInput[7] === blankAnswers[7][0] &&
+      userInput[8] === blankAnswers[8][0]
     ) {
-      console.log("정답!");
       setIsCorret(true);
     } else {
-      console.log("땡!");
       setIsCorret(false);
     }
   };
@@ -79,32 +96,77 @@ function Problem3(props) {
         <div className={styles.exampleContainer}>
           <div className={styles.blankContainer}>
             <div> 옷에 묻은 볼펜 자국은</div>
-            <input data-key="0" type="text" onChange={handleInputChange} />
+            <input
+              data-key="0"
+              style={{ width: `${blankAnswers[0][1]}rem` }}
+              type="text"
+              onChange={handleInputChange}
+            />
             <div>나</div>
-            <input data-key="1" type="text" onChange={handleInputChange} />
+            <input
+              data-key="1"
+              type="text"
+              style={{ width: `${blankAnswers[1][1]}rem` }}
+              onChange={handleInputChange}
+            />
             <div>으로 지운다.</div>
           </div>
           <div className={styles.blankContainer}>
             <div> 바닥에 흘린 기름은</div>
-            <input data-key="2" type="text" onChange={handleInputChange} />
+            <input
+              data-key="2"
+              style={{ width: `${blankAnswers[2][1]}rem` }}
+              type="text"
+              onChange={handleInputChange}
+            />
             <div>를 뿌린 후 닦아낸다.</div>
           </div>
           <div className={styles.blankContainer}>
             <div> 잘 열리지 않는 병뚜껑은 뚜껑에 </div>
-            <input data-key="3" type="text" onChange={handleInputChange} />
+            <input
+              data-key="3"
+              style={{ width: `${blankAnswers[3][1]}rem` }}
+              type="text"
+              onChange={handleInputChange}
+            />
             <div>을 감싼 후 연다.</div>
           </div>
           <div className={styles.blankContainer}>
-            <input data-key="4" type="text" onChange={handleInputChange} />
+            <input
+              data-key="4"
+              style={{ width: `${blankAnswers[4][1]}rem ` }}
+              type="text"
+              onChange={handleInputChange}
+            />
             <div>을 자극하는 채소(</div>
-            <input data-key="5" type="text" onChange={handleInputChange} />
+            <input
+              data-key="5"
+              style={{ width: `${blankAnswers[5][1]}rem` }}
+              type="text"
+              onChange={handleInputChange}
+            />
             <div>, </div>
-            <input data-key="6" type="text" onChange={handleInputChange} />
+            <input
+              data-key="6"
+              style={{ width: `${blankAnswers[6][1]}rem` }}
+              type="text"
+              onChange={handleInputChange}
+            />
             <div>) 는 </div>
-            <input data-key="7" type="text" onChange={handleInputChange} />
+            <input
+              data-key="7"
+              style={{ width: `${blankAnswers[7][1]}rem` }}
+              type="text"
+              onChange={handleInputChange}
+            />
             <div>를 바른 후</div>
-            <input data-key="8" type="text" onChange={handleInputChange} />
-            <div>로 썬다.</div>
+            <input
+              data-key="8"
+              style={{ width: `${blankAnswers[8][1]}rem` }}
+              type="text"
+              onChange={handleInputChange}
+            />
+            <>로 썬다.</>
           </div>
         </div>
         <ToolTips text="<b style='color:red;'>생활정보</b>를 기억해 주세요."></ToolTips>

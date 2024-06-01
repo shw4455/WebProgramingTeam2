@@ -11,9 +11,7 @@ function Problem1(props) {
   const todayMonth = (today.getMonth() + 1).toString();
   const todayDay = today.getDate().toString();
 
-  console.log("todayYear : ", todayYear);
-  console.log("todayMonth : ", todayMonth);
-  console.log("todayDay : ", todayDay);
+  console.log("todayYear, Month, Day : ", todayYear, todayMonth, todayDay);
 
   const [userInput, setUserInput] = useState({ year: "", month: "", day: "" });
 
@@ -50,10 +48,8 @@ function Problem1(props) {
       userMonth === todayMonth &&
       userDay === todayDay
     ) {
-      console.log("정답");
       setIsCorret(true);
     } else {
-      console.log("오류");
       setIsCorret(false);
     }
   };

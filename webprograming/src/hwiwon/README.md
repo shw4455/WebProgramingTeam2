@@ -109,8 +109,9 @@ React에서 JSX 코드를 작성할 때는 블록 안에 있는 표현식을 반
 리액트의 비동기 동작으로 인한 현상
 useEffect로 의존성 변수를 두고, 이후 정답체크를 해주면 된다
 
-[] iscorrect useState 이외에 다른 방법으로 구현 > 정답 이후, iscorrect 상태 변경으로 인한, 정답 초기화(리렌더링)
-
+[x] iscorrect useState 이외에 다른 방법으로 구현 > 정답 이후, iscorrect 상태 변경으로 인한, 정답 초기화(리렌더링)
+[x] 부모 말고 자식 엘리먼트만 리렌더링 하는 방법 1. PureComponent 2. useMemo 3. shouldComponentUpdate
+로 하려고 했으나, userInput, imgNumbers, imgAnswers에 모두 useState를 주어 해결
 [] blank 입력칸의 크기를 지정할 수 있도록
 어디부터 다시 시작을 해야하나
 
@@ -121,11 +122,6 @@ useEffect로 의존성 변수를 두고, 이후 정답체크를 해주면 된다
 자바 스크립트 코드를 이용해서 인라인 스타일을 직접적으로 바꿔주게 되면
 css hover 기능과 충돌하여 올바르게 동작하지 않았기 때문에
 인라인 스타일을 변경해 주는 대신 csx 스타일 클래스를 추가하고 삭제해 주는 방식으로 구현했다
-
-[] 부모 말고 자식 엘리먼트만 리렌더링 하는 방법
-1. PureComponent 
-2. useMemo
-3. shouldComponentUpdate 
 
 1. inline 요소는 margin, top, bottom이 적용되지 않는다
 

@@ -41,6 +41,8 @@ function Problem2(props) {
   const todayHours = today.getHours().toString();
   const todayMinutes = today.getMinutes().toString();
 
+  console.log("todayHours, Minutes : ", todayHours, todayMinutes);
+
   const [clockTime, setClockTime] = useState({ hours: "", minutes: "" });
 
   const handleInputChange = (event) => {
@@ -48,11 +50,6 @@ function Problem2(props) {
     const value = event.target.value;
 
     setClockTime({ ...clockTime, [id]: value });
-
-    // console.log("todayHours", todayHours);
-    // console.log("time.hours", time.hours);
-    // console.log("todayMinutes", todayMinutes);
-    // console.log("time.minutes", time.minutes);
 
     if (todayHours === clockTime.hours && todayMinutes === clockTime.minutes) {
       setIsCorret(true);
