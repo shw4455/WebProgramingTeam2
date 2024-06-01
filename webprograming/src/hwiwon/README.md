@@ -122,6 +122,11 @@ useEffect로 의존성 변수를 두고, 이후 정답체크를 해주면 된다
 css hover 기능과 충돌하여 올바르게 동작하지 않았기 때문에
 인라인 스타일을 변경해 주는 대신 csx 스타일 클래스를 추가하고 삭제해 주는 방식으로 구현했다
 
+[] 부모 말고 자식 엘리먼트만 리렌더링 하는 방법
+1. PureComponent 
+2. useMemo
+3. shouldComponentUpdate 
+
 1. inline 요소는 margin, top, bottom이 적용되지 않는다
 
 [] width: auto가 적용되지 않은 이유

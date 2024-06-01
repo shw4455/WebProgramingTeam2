@@ -31,17 +31,17 @@ function Problem4(props) {
     return counts;
   }
 
-  // const [userInput, setUserInput] = useState({
-  //   chicken: 0,
-  //   glasses: 0,
-  //   bicycle: 0,
-  // });
-
-  var userInput = {
+  const [userInput, setUserInput] = useState({
     chicken: 0,
     glasses: 0,
     bicycle: 0,
-  };
+  });
+
+  // var userInput = {
+  //   chicken: 0,
+  //   glasses: 0,
+  //   bicycle: 0,
+  // };
 
   const handleInputChange = (event) => {
     const id = event.target.id;
@@ -49,7 +49,7 @@ function Problem4(props) {
     const value = parseInt(event.target.value);
     // const valueInt = value.parseInt(value);
 
-    userInput = { ...userInput, [id]: value };
+    setUserInput({ ...userInput, [id]: value });
     console.log(userInput);
 
     checkDataMatch();
@@ -74,14 +74,24 @@ function Problem4(props) {
       bicycle === userInput.bicycle
     ) {
       setIsCorret(true);
+      console.log("정답");
     } else {
       setIsCorret(false);
+      console.log("오답");
     }
   };
 
-  const imgNumbers = generateRandomArray(16, 3);
+  useEffect(() => {
+    console.log("컴포넌트 리렌더링");
+  });
 
-  const imgAnswers = countNumbers(imgNumbers);
+  const [imgNumbers, setImgNumbers] = useState(generateRandomArray(16, 3));
+
+  // const imgAnswers = countNumbers(imgNumbers);
+
+  // useState를 사용함으로서 정답을 고정
+  const [imgAnswers, setImgAnswers] = useState(countNumbers(imgNumbers));
+
   console.log(imgAnswers);
 
   useEffect(() => {
