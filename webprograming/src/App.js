@@ -2,7 +2,7 @@ import React from "react";
 import Today from "./hwiwon/page/Today";
 import Problem1 from "./hwiwon/page/Problem1.jsx";
 import Problem2 from "./hwiwon/page/Problem2.jsx";
-import styles from "./globalStyles.css";
+// import styles from "./globalStyles.css";
 import Test from "./hwiwon/page/Test02.jsx";
 import Problem3Example from "./hwiwon/page/Problem3Example.jsx";
 import Problem3 from "./hwiwon/page/Problem3.jsx";
