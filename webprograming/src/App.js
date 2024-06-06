@@ -1,4 +1,4 @@
-import Hwiwon from "./hwiwon/Page.jsx";
+import Hwiwon from "./hwiwon/page/Page.jsx";
 import Donghyun from "./donghyun/Page.jsx";
 import Junha from "./junha/Page.jsx";
 import Youngji from "./youngji/Page.jsx";
