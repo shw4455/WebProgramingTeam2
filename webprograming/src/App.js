@@ -9,7 +9,7 @@ import Problem3 from "./hwiwon/page/Problem3.jsx";
 import ProblemContainer from "./hwiwon/page/ProblemContainer.jsx";
 import ProblemTitle from "./hwiwon/component/ProblemTitle.jsx";
 import Problem4 from "./hwiwon/page/Problem4.jsx";
-import Test01 from "./hwiwon/page/Test01.jsx";
+// import Test01 from "./hwiwon/page/Test01.jsx";
 
 function App() {
   return (

@@ -19,12 +19,14 @@ function Problem2(props) {
     const selectedLabel = document.querySelector(
       `label[htmlFor="${selectedAMPM}"]`
     );
-
+    console.log("selectedLabel : ", selectedLabel);
     // 전체 selected-label 클래스 제거 (선택된 상태 유지를 위해 선택 해제 시 필요)
     const labels = document.querySelectorAll(`.${styles.ampmRadioLabel}`);
     labels.forEach((label) =>
       label.classList.remove(styles.ampmRadioLabelSelected)
     );
+
+    console.log("labels : ", labels);
 
     // 선택된 라벨에 클래스 추가
     if (selectedLabel) {
@@ -34,6 +36,8 @@ function Problem2(props) {
 
   const handleRadioChange = (event) => {
     setSelectedAMPM(event.target.value);
+
+    console.log("event.target : ", event.target);
   };
 
   const today = new Date();
