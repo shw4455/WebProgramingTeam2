@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+.Linked-Container {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+
+.NavBar-gap{
+    font-size: larger;
+    margin: 10px;
+    text-decoration: none;
+    color: #000; /* 텍스트 색상 */
+    font-size: 1.2rem; /* 텍스트 크기 */
+    padding: 10px;
+    border: 3px solid beige;
+    border-radius: 100px;
+    background-color: beige;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.NavBar-gap:hover {
+    color: blue;
+}

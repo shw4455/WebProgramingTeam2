@@ -1,0 +1,25 @@
+.TitieContainer {
+    position: relative;
+}
+
+.TitleIcon{
+    position: absolute;
+
+    width: 60px;
+    height:  60px;
+
+    top: -30px;
+    left: -50px;
+
+}
+.TitleText {
+    transform: translate(-20px);
+  width: max-content;
+  border-radius: 20px;
+  text-align: left;
+  font-size: 0.8rem;
+  padding: 5px 20px;
+  opacity: 0.6;
+  background: rgb(253, 255, 119);
+  min-width: 50px;
+}

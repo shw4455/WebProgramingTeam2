@@ -1,0 +1,23 @@
+
+.ToolTipsContainer{
+  position: relative;
+}
+.ToolTipsIcon {
+  position: absolute;
+
+  width: 30px;
+  height:  30px;
+
+  top: -3px;
+  left: -30px;
+
+}
+
+.toolTipsText {
+  /* 내부 요소의 크기만큼, width를 갖게 해주기 위함 */
+  display: block;
+  width: max-content;
+  border-bottom: solid 1px gray;
+  margin: 30px 0px;
+}
+
