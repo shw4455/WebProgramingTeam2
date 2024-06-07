@@ -17,7 +17,8 @@ function Problem2(props) {
   useEffect(() => {
     // 선택된 라벨 찾기
     const selectedLabel = document.querySelector(
-      `label[htmlFor="${selectedAMPM}"]`
+      // `label[htmlFor="${selectedAMPM}"]`, 왜 안 되는 걸까요?
+      `label[for ="${selectedAMPM}"]`
     );
     console.log("selectedLabel : ", selectedLabel);
     // 전체 selected-label 클래스 제거 (선택된 상태 유지를 위해 선택 해제 시 필요)
@@ -27,6 +28,7 @@ function Problem2(props) {
     );
 
     console.log("labels : ", labels);
+    console.log("selectedAMPM : ", selectedAMPM);
 
     // 선택된 라벨에 클래스 추가
     if (selectedLabel) {
@@ -175,7 +177,7 @@ function Problem2(props) {
                     checked={selectedAMPM === "pm"}
                     onChange={handleRadioChange}
                   />
-                  <label htmlFor="pm" className={styles.ampmRadioLabel}>
+                  <label for="pm" className={styles.ampmRadioLabel}>
                     오후
                   </label>
                 </div>
