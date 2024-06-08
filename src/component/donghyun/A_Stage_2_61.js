@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CoinNumber from "./CoinNumber";
 
+
+
 const A_Stage_2_61 = () => {
+  const [resultMessage1, setResultMessage1] = useState(false);
+  const [resultMessage2, setResultMessage2] = useState(false);
+  const [resultMessage3, setResultMessage3] = useState(false);
+  const [resultMessage4, setResultMessage4] = useState(false);
+
   return (
     <div>
       <div className="maintitle-container" style={{ marginBottom: "100px" }}>
@@ -29,44 +36,116 @@ const A_Stage_2_61 = () => {
 
       <div>
         <div>
-          <div style={{display: "flex", marginLeft:"50px"}}>
+          <div style={{display: "flex", marginLeft:"50px", position: "relative", alignItems: "center" }}>
             <img 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_FQgtslJsa3BcsZMe9NpBCgjrfKKuzVLUUw&s"
             style={{width:30, height:30, marginTop:"20px"}}
-            ></img>
+            />
+            {resultMessage1 && (
+            <div
+              style={{
+                position: "absolute",
+                top: "-30px",
+                left: "-30px",
+                width: 100,
+                height: 100,
+                border: " 5px solid rgba(255,0,0,0.5)",
+                borderRadius: "50%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "white",
+                fontSize: "2rem",
+              }}
+            >o</div>
+          )}
             <h2>동전 11개로 530원 만들기</h2>
           </div>
-            <CoinNumber />
+            <CoinNumber correctTenWon={3} correctFiftyWon={4} correctHundredWon={3} setResultMessage={setResultMessage1}/>
         </div>
         <div>
-          <div style={{display: "flex", marginLeft:"50px"}}>
+          <div style={{display: "flex", marginLeft:"50px", position: "relative", alignItems: "center" }}>
             <img 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_FQgtslJsa3BcsZMe9NpBCgjrfKKuzVLUUw&s"
             style={{width:30, height:30, marginTop:"20px"}}
             ></img>
+            {resultMessage2 && (
+            <div
+              style={{
+                position: "absolute",
+                top: "-30px",
+                left: "-30px",
+                width: 100,
+                height: 100,
+                border: " 5px solid rgba(255,0,0,0.5)",
+                borderRadius: "50%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "white",
+                fontSize: "2rem",
+              }}
+            >o</div>
+          )}
             <h2>동전 9개로 620원 만들기</h2>
           </div>
-            <CoinNumber />
+            <CoinNumber correctTenWon={2} correctFiftyWon={2} correctHundredWon={5} setResultMessage={setResultMessage2}/>
         </div>
         <div>
-          <div style={{display: "flex", marginLeft:"50px"}}>
+          <div style={{display: "flex", marginLeft:"50px", position: "relative", alignItems: "center" }}>
             <img 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_FQgtslJsa3BcsZMe9NpBCgjrfKKuzVLUUw&s"
             style={{width:30, height:30, marginTop:"20px"}}
             ></img>
+            {resultMessage3 && (
+            <div
+              style={{
+                position: "absolute",
+                top: "-30px",
+                left: "-30px",
+                width: 100,
+                height: 100,
+                border: " 5px solid rgba(255,0,0,0.5)",
+                borderRadius: "50%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "white",
+                fontSize: "2rem",
+              }}
+            >o</div>
+          )}
             <h2>동전 7개로 200원 만들기</h2>
           </div>
-            <CoinNumber />
+            <CoinNumber correctTenWon={5} correctFiftyWon={1} correctHundredWon={1} setResultMessage={setResultMessage3}/>
         </div>
         <div>
-          <div style={{display: "flex", marginLeft:"50px"}}>
+          <div style={{display: "flex", marginLeft:"50px", position: "relative", alignItems: "center" }}>
             <img 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_FQgtslJsa3BcsZMe9NpBCgjrfKKuzVLUUw&s"
             style={{width:30, height:30, marginTop:"20px"}}
             ></img>
+            {resultMessage4 && (
+            <div
+              style={{
+                position: "absolute",
+                top: "-30px",
+                left: "-30px",
+                width: 100,
+                height: 100,
+                border: " 5px solid rgba(255,0,0,0.5)",
+                borderRadius: "50%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "white",
+                fontSize: "2rem",
+              }}
+            >o</div>
+          )}
             <h2>동전 10개로 510원 만들기</h2>
           </div>
-            <CoinNumber />
+            <CoinNumber correctTenWon={1} correctFiftyWon={8} correctHundredWon={1} setResultMessage={setResultMessage4}/>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const images = [
   "https://media.istockphoto.com/id/183326451/ko/%EC%82%AC%EC%A7%84/savoy-%EC%96%91%EB%B0%B0%EC%B6%94.webp?b=1&s=170667a&w=0&k=20&c=ywYg6qLKvxevN4IhksEK4QlfATbvu1EPkAry04RyEDs=",
@@ -26,14 +26,29 @@ const VegetableGrid = () => {
     }
   };
 
-  return (
-    <div
-      style={{
-        display: "grid",
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const GridContainer = {
+    display: "grid",
         gridTemplateColumns: "repeat(3,1fr)",
         gridTemplateRows: "repeat(4, 1fr)",
-        padding: "10px",
-      }}
+        padding: "1px",
+        width: isMobile ? "300px" : "600px",
+        height: isMobile ? "450px" : "800px"
+  }
+
+  return (
+    <div
+      style={GridContainer}
     >
       {images.map((src, index) => (
         <div
@@ -42,8 +57,7 @@ const VegetableGrid = () => {
             position: "relative",
             cursor: "pointer",
             border:
-              index === selectedImage ? "2px solid blue" : "2px solid black", // 선택된 이미지면 파란색 테두리, 아니면 검은색 테두리
-            borderRadius: "50%",
+              index === selectedImage ? "1px solid blue" : "1px solid black", // 선택된 이미지면 파란색 테두리, 아니면 검은색 테두리
             width: "100%",
             height: "100%",
             overflow: "hidden",
