@@ -1,18 +1,22 @@
 import React from "react";
-import Year from "./Year";
-import Day from "./Day";
-import Days_of_week from "./Days_of_week";
-import Weather from './Weather';
-import MySchedule from "./MySchedule";
-import NextDay from "./NextDay";
+import Year from "../component/Year";
+import Day from "../component/Day";
+import Days_of_week from "../component/Days_of_week";
+import Weather from '../component/Weather';
+import MySchedule from "../component/MySchedule";
+import NextDay from "../component/NextDay";
+import Box from "../component/Box";
 
 function Problem1(props) {
 
-    
-
     return(
         <div>
+             <div style={{marginLeft: '305px'}}>
+                <Box />
+            </div>
+            
         <div style={{ textAlign: 'center' , marginLeft: '20px'}}>
+       
         <div style={{ display: 'inline-block'}}>
             <Year />
             </div>
