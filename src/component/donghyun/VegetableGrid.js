@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 const images = [
   "https://media.istockphoto.com/id/183326451/ko/%EC%82%AC%EC%A7%84/savoy-%EC%96%91%EB%B0%B0%EC%B6%94.webp?b=1&s=170667a&w=0&k=20&c=ywYg6qLKvxevN4IhksEK4QlfATbvu1EPkAry04RyEDs=",
@@ -17,13 +19,31 @@ const images = [
 
 const VegetableGrid = () => {
   const [selectedImage, setSelectedImage] = useState(-1);
+  const [shapes, setShapes] = useState([]);
+  const [popupOpen, setPopupOpen] = useState(false);
+  //const [currentIndex, setCurrentIndex] = useState(null);
 
   const handleImageClick = (index) => {
-    if (index === selectedImage) {
-      selectedImage(-1); // 이미 선택된 이미지를 다시 클릭하면 선택 해제
-    } else {
-      setSelectedImage(index); // 새로운 이미지를 클릭하면 해당 이미지를 선택
+    if (selectedImage === index) {
+      // 이미 선택된 이미지를 다시 클릭한 경우
+      return;
     }
+
+    const newShapes = [...shapes];
+    newShapes[selectedImage] = "square"; // 모든 이미지를 네모로 초기화
+    newShapes[index] = "square"; // 선택한 이미지의 모양을 원으로 변경
+    setShapes(newShapes);
+    setSelectedImage(index); // 선택된 이미지 업데이트
+    setPopupOpen(true); // 팝업 열기
+    //setCurrentIndex(index); // 현재 클릭된 이미지 인덱스 설정
+  };
+
+  // 팝업에서 선탣한 도형을 설정하는 함수
+  const handleShapeSelect = (shape) => {
+    const newShapes = [...shapes];
+    newShapes[selectedImage] = shape; // 선택한 도형으로 변경
+    setShapes(newShapes);
+    setPopupOpen(false); // 선택 후 팝업 닫기
   };
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -39,17 +59,16 @@ const VegetableGrid = () => {
 
   const GridContainer = {
     display: "grid",
-        gridTemplateColumns: "repeat(3,1fr)",
-        gridTemplateRows: "repeat(4, 1fr)",
-        padding: "1px",
-        width: isMobile ? "300px" : "600px",
-        height: isMobile ? "450px" : "800px"
-  }
+    flexwrap: "wrap",
+    gridTemplateColumns: "repeat(3,1fr)",
+    gridTemplateRows: "repeat(4, 1fr)",
+    padding: "1px",
+    width: isMobile ? "300px" : "600px",
+    height: isMobile ? "450px" : "800px",
+  };
 
   return (
-    <div
-      style={GridContainer}
-    >
+    <div style={GridContainer}>
       {images.map((src, index) => (
         <div
           key={index}
@@ -57,14 +76,14 @@ const VegetableGrid = () => {
             position: "relative",
             cursor: "pointer",
             border:
-              index === selectedImage ? "1px solid blue" : "1px solid black", // 선택된 이미지면 파란색 테두리, 아니면 검은색 테두리
+              index === selectedImage ? "2px solid blue" : "2px solid black", // 선택된 이미지면 파란색 테두리, 아니면 검은색 테두리
             width: "100%",
             height: "100%",
             overflow: "hidden",
           }}
           onClick={() => handleImageClick(index)} // 이미지 클릭 시 handleImageClick 함수 호출
         >
-          {index === selectedImage && ( // 선택된 이미지 일 때만 표시
+          {shapes[index] && ( // shapes[index]가 존재할 때만 네모 모양을 표시
             <div
               style={{
                 position: "absolute",
@@ -77,13 +96,36 @@ const VegetableGrid = () => {
                 alignItems: "center",
               }}
             >
-              <span
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.7)", // 반투명 흰색 배경
-                  padding: "4px",
-                  borderRadius: "50%", // 원형으로 모양을 만듬
-                }}
-              ></span>
+              {shapes[index] === "circle" && ( // 선택된 이미지 일 때만 표시
+                <span
+                  style={{
+                    backgroundColor: "rgba(0,255,255,0.7)",
+                    padding: "4px",
+                    borderRadius: "50%",
+                    width: "100px",
+                    height: "100px",
+                  }}
+                ></span>
+              )}
+              {shapes[index] === "triangle" && (
+                <span
+                  style={{
+                    backgroundColor: "rgba(0,255,255,0.7)",
+                    clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                    width: "100px",
+                    height: "100px",
+                  }}
+                ></span>
+              )}
+              {shapes[index] === "square" && ( // 네모 모양일 때 설정
+                <div
+                  style={{
+                    border: "10px solid pink", // 빨간색 배경
+                    width: "100px", // 너비 100px
+                    height: "100px", // 높이 100px
+                  }}
+                ></div>
+              )}
             </div>
           )}
           <img
@@ -100,6 +142,32 @@ const VegetableGrid = () => {
           />
         </div>
       ))}
+      <Popup open={popupOpen} onClose={() => setPopupOpen(false)}>
+        <div style={{ display: "flex", justifyContent: "center", gap: "3rem" }}>
+          <button
+            style={{
+              width: "100px",
+              height: "100px",
+              textAlign: "center",
+              fontSize: "24px",
+              borderRadius: "50%",
+            }}
+            onClick={() => handleShapeSelect("circle")}
+          >
+            원
+          </button>
+          <button
+            style={{
+              width: "100px",
+              height: "100px",
+              clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+            }}
+            onClick={() => handleShapeSelect("triangle")}
+          >
+            세모
+          </button>
+        </div>
+      </Popup>
     </div>
   );
 };
