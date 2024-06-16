@@ -1,4 +1,4 @@
-input {
+.input {
     background-color: transparent;
     width: 3rem;
     /* height: 1rem; */
@@ -9,14 +9,6 @@ input {
     text-align: right;
 
     outline: none;
-}
 
-body {
-    /* margin: 100px; */
-    background-color: white;
-}
-
-* {
-    box-sizing: border-box;
-    /* border: solid 1px black; */
+    background: red;
 }

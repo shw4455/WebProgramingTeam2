@@ -95,7 +95,7 @@ function Problem4(props) {
 
   return (
     <ProblemContainer>
-      <ProblemTitle text="생활정보 기억하기" />
+      <ProblemTitle text="모양 개수 세기" />
       <ProblemText
         text="다음의 여러 가지 모양들 중, 각 모양의 개수를 세어 적어보세요."
         isCorrect={isCorrect}

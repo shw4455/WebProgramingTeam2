@@ -201,12 +201,14 @@ function Problem2(props) {
               <div id={styles.timeContainer}>
                 <div>
                   <input
+                    className={styles.input}
                     id="hours"
                     value={clockTime.hours}
                     onChange={handleInputChange}
                   />
                   시
                   <input
+                    className={styles.input}
                     id="minutes"
                     value={clockTime.minutes}
                     onChange={handleInputChange}

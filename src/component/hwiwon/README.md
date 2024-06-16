@@ -131,3 +131,6 @@ https://yeko90.tistory.com/entry/css-%EA%B8%B0%EC%B4%88-width-auto-%EC%99%80-wid
 오류
 [x] console.log가 2번 출력 되는 것
 strictmode가 검사를 위해 2번 렌더링 하기 때문, 지워주면 해결된다
+
+module.css에서 내가 직업 이름을 지은 변수는 컴퍼넌트별로 구분이 되지만,
+input과 같은 태그 선택자는 구분이 안 되는 것 같다

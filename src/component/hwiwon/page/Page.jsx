@@ -1,8 +1,5 @@
 import React from "react";
-import styles from "./styles/globalStyles.css";
-import Test01 from "./Test01.jsx";
-import Test from "./Test02.jsx";
-import Today from "./Today.jsx";
+import styles from "./styles/globalStyles.module.css";
 import Problem1 from "./Problem1.jsx";
 import Problem2 from "./Problem2.jsx";
 import Problem3Example from "./Problem3Example.jsx";
@@ -17,8 +14,8 @@ function Page() {
       <ProblemContainer>
         <Problem1></Problem1>
         <Problem2></Problem2>
-        <Problem3></Problem3>
         <Problem3Example></Problem3Example>
+        <Problem3></Problem3>
         <Problem4></Problem4>
       </ProblemContainer>
     </div>

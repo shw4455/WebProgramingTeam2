@@ -96,14 +96,14 @@ function Problem3(props) {
         <div className={styles.exampleContainer}>
           <div className={styles.blankContainer}>
             <div> 옷에 묻은 볼펜 자국은</div>
-            <input
+            <input className= {styles.input}
               data-key="0"
               style={{ width: `${blankAnswers[0][1]}rem` }}
               type="text"
               onChange={handleInputChange}
             />
             <div>나</div>
-            <input
+            <input className= {styles.input}
               data-key="1"
               type="text"
               style={{ width: `${blankAnswers[1][1]}rem` }}
@@ -113,7 +113,7 @@ function Problem3(props) {
           </div>
           <div className={styles.blankContainer}>
             <div> 바닥에 흘린 기름은</div>
-            <input
+            <input className= {styles.input}
               data-key="2"
               style={{ width: `${blankAnswers[2][1]}rem` }}
               type="text"
@@ -123,7 +123,7 @@ function Problem3(props) {
           </div>
           <div className={styles.blankContainer}>
             <div> 잘 열리지 않는 병뚜껑은 뚜껑에 </div>
-            <input
+            <input className= {styles.input}
               data-key="3"
               style={{ width: `${blankAnswers[3][1]}rem` }}
               type="text"
@@ -132,35 +132,35 @@ function Problem3(props) {
             <div>을 감싼 후 연다.</div>
           </div>
           <div className={styles.blankContainer}>
-            <input
+            <input className= {styles.input}
               data-key="4"
               style={{ width: `${blankAnswers[4][1]}rem ` }}
               type="text"
               onChange={handleInputChange}
             />
             <div>을 자극하는 채소(</div>
-            <input
+            <input className= {styles.input}
               data-key="5"
               style={{ width: `${blankAnswers[5][1]}rem` }}
               type="text"
               onChange={handleInputChange}
             />
             <div>, </div>
-            <input
+            <input className= {styles.input}
               data-key="6"
               style={{ width: `${blankAnswers[6][1]}rem` }}
               type="text"
               onChange={handleInputChange}
             />
             <div>) 는 </div>
-            <input
+            <input className= {styles.input}
               data-key="7"
               style={{ width: `${blankAnswers[7][1]}rem` }}
               type="text"
               onChange={handleInputChange}
             />
             <div>를 바른 후</div>
-            <input
+            <input className= {styles.input}
               data-key="8"
               style={{ width: `${blankAnswers[8][1]}rem` }}
               type="text"

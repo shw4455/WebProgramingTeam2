@@ -37,5 +37,16 @@
 }
 
 .blank{
+
+    background-color: transparent;
+    width: 3rem;
+    /* height: 1rem; */
+    font-size: 1rem;
+    border: none;
     border-bottom: solid 1px black;
+
+    text-align: right;
+
+    border-bottom: solid 1px black;
+    
 }

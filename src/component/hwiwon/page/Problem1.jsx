@@ -63,18 +63,25 @@ function Problem1(props) {
         />
         <div className={styles.problemContainer}>
           <input
+            className= {styles.input}
             id="year"
             value={userInput.year}
             onChange={handleInputChange}
           />
           년
           <input
+            className= {styles.input}
             id="month"
             value={userInput.month}
             onChange={handleInputChange}
           />
           월
-          <input id="day" value={userInput.day} onChange={handleInputChange} />
+          <input
+            className= {styles.input}
+            id="day"
+            value={userInput.day}
+            onChange={handleInputChange}
+          />
           일
         </div>
       </div>
