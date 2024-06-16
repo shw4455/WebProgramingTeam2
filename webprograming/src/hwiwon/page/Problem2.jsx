@@ -64,7 +64,22 @@ function Problem2(props) {
     }
   };
 
-  const clockArrows = [
+  const clockHArrows = [
+    { id: 12 },
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
+    { id: 5 },
+    { id: 6 },
+    { id: 7 },
+    { id: 8 },
+    { id: 9 },
+    { id: 10 },
+    { id: 11 },
+  ];
+
+  const clockMArrows = [
     { id: 0 },
     { id: 1 },
     { id: 2 },
@@ -88,7 +103,7 @@ function Problem2(props) {
   const [currHArrow, setCurrHArrow] = useState(null); // 현재 선택된 요소
 
   const handleHArrowClicked = (event) => {
-    const time = event.target.id * 5;
+    const time = event.target.id;
     const newCurrHArrow = event.target;
     console.log("prevHArrow : ", prevHArrow);
     console.log("currHArrow : ", currHArrow);
@@ -101,7 +116,7 @@ function Problem2(props) {
     newCurrHArrow.classList.add(styles.show);
 
     // 상태값 업데이트
-    setClockTime({ ...clockTime, minutes: time });
+    setClockTime({ ...clockTime, hours: time });
     setPrevHArrow(currHArrow);
     setCurrHArrow(newCurrHArrow);
   };
@@ -118,22 +133,23 @@ function Problem2(props) {
   const [currMArrow, setCurrMArrow] = useState(null); // 현재 선택된 요소
 
   const handleMArrowClicked = (event) => {
-    const time = event.target.id;
+    const time = event.target.id * 5;
     const newCurrMArrow = event.target;
     console.log("prevMArrow : ", prevMArrow);
     console.log("currMArrow : ", currMArrow);
-    // 이전 선택된 요소 투명도 조절
-    if (prevMArrow) {
-      prevMArrow.classList.remove(styles.show);
-    } // useEffect를 사용하면서 없어도 되는 부분
 
     // 현재 선택된 요소 투명도 조절
     newCurrMArrow.classList.add(styles.show);
 
     // 상태값 업데이트
-    setClockTime({ ...clockTime, hours: time });
+    setClockTime({ ...clockTime, minutes: time });
     setPrevMArrow(currMArrow);
     setCurrMArrow(newCurrMArrow);
+
+    // 이전 선택된 요소 투명도 조절
+    if (prevMArrow) {
+      prevMArrow.classList.remove(styles.show);
+    } // useEffect를 사용하면서 없어도 되는 부분
   };
 
   // `useEffect` Hook을 사용하여 이전 선택된 요소 투명도 제어
@@ -156,7 +172,7 @@ function Problem2(props) {
             <div id={styles.timeSelectContainer}>
               <div id={styles.ampmContainer}>
                 <div id={styles.radioContainer}>
-                  <input
+                  <input className="input"
                     id="am"
                     className={styles.ampmRadioBtn}
                     type="radio"
@@ -168,7 +184,7 @@ function Problem2(props) {
                   <label htmlFor="am" className={styles.ampmRadioLabel}>
                     오전
                   </label>
-                  <input
+                  <input className="input"
                     id="pm"
                     className={styles.ampmRadioBtn}
                     type="radio"
@@ -184,13 +200,13 @@ function Problem2(props) {
               </div>
               <div id={styles.timeContainer}>
                 <div>
-                  <input
+                  <input className="input"
                     id="hours"
                     value={clockTime.hours}
                     onChange={handleInputChange}
                   />
                   시
-                  <input
+                  <input className="input"
                     id="minutes"
                     value={clockTime.minutes}
                     onChange={handleInputChange}
@@ -210,7 +226,7 @@ function Problem2(props) {
           <div id={styles.timeImageContainer}>
             <img id={styles.timeImage} src={clockImg} alt=""></img>
             <div id={styles.clockPivot}>
-              {clockArrows.map((arrow) => (
+              {clockMArrows.map((arrow) => (
                 <div
                   id={arrow.id}
                   className={styles.clockArrowContainer}
@@ -226,7 +242,7 @@ function Problem2(props) {
                   ></img>
                 </div>
               ))}
-              {clockArrows.map((arrow) => (
+              {clockHArrows.map((arrow) => (
                 <div
                   id={arrow.id}
                   className={styles.clockArrowContainer}
