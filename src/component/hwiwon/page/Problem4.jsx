@@ -37,17 +37,9 @@ function Problem4(props) {
     bicycle: 0,
   });
 
-  // var userInput = {
-  //   chicken: 0,
-  //   glasses: 0,
-  //   bicycle: 0,
-  // };
-
   const handleInputChange = (event) => {
     const id = event.target.id;
-    // const value = event.target.value.parseInt();
     const value = parseInt(event.target.value);
-    // const valueInt = value.parseInt(value);
 
     setUserInput({ ...userInput, [id]: value });
 
@@ -58,15 +50,6 @@ function Problem4(props) {
     const chicken = imgAnswers["1"];
     const glasses = imgAnswers["2"];
     const bicycle = imgAnswers["3"];
-
-    // console.log('imgAnswers["1"]) :', typeof imgAnswers["1"]);
-    // console.log('imgAnswers["2"]) :', typeof imgAnswers["2"]);
-    // console.log('imgAnswers["3"]) :', typeof imgAnswers["3"]);
-
-    // console.log("userInput.chicken : ", typeof userInput.chicken);
-    // console.log("userInput.glasses : ", typeof userInput.glasses);
-    // console.log("userInput.bicycle : ", typeof userInput.bicycle);
-
     if (
       chicken === userInput.chicken &&
       glasses === userInput.glasses &&
@@ -78,13 +61,8 @@ function Problem4(props) {
     }
   };
 
-  // useEffect(() => {
-  //   console.log("컴포넌트 리렌더링");
-  // });
-
   const [imgNumbers, setImgNumbers] = useState(generateRandomArray(16, 3));
 
-  // useState를 사용함으로서 정답을 고정
   const [imgAnswers, setImgAnswers] = useState(countNumbers(imgNumbers));
 
   console.log("imgAnswers : ", imgAnswers);

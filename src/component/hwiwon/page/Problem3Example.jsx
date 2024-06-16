@@ -9,9 +9,8 @@ import ProblemTitle from "../component/ProblemTitle";
 function Problem3Example(props) {
   return (
     <>
-    
       <ProblemContainer>
-      <ProblemTitle text="생활정보 기억하기"/>
+        <ProblemTitle text="생활정보 기억하기" />
         <ProblemText
           text={`다음은 알아두면 유용한 <b style='color:red;'>생활정보</b>입니다.
 소리내어 읽어보세요.`}

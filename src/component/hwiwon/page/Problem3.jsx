@@ -4,7 +4,6 @@ import ProblemText from "../component/ProblemText";
 import ProblemContainer from "../component/ProblemContainer";
 import ToolTips from "../component/ToolTips";
 import ProblemTitle from "../component/ProblemTitle";
-// import Problem3ExampleText from "../component/Problem3ExampleText";
 
 function Problem3(props) {
   const [isCorrect, setIsCorret] = useState(false);
@@ -20,18 +19,6 @@ function Problem3(props) {
     "",
     "",
   ]);
-
-  // const blankAnswers = [
-  //   "물파스",
-  //   "아세톤",
-  //   "밀가루",
-  //   "고무줄",
-  //   "눈",
-  //   "고추",
-  //   "양파",
-  //   "올리브유",
-  //   "칼",
-  // ];
   const blankAnswers = [
     ["물파스", 3],
     ["아세톤", 3],
@@ -96,14 +83,16 @@ function Problem3(props) {
         <div className={styles.exampleContainer}>
           <div className={styles.blankContainer}>
             <div> 옷에 묻은 볼펜 자국은</div>
-            <input className= {styles.input}
+            <input
+              className={styles.input}
               data-key="0"
               style={{ width: `${blankAnswers[0][1]}rem` }}
               type="text"
               onChange={handleInputChange}
             />
             <div>나</div>
-            <input className= {styles.input}
+            <input
+              className={styles.input}
               data-key="1"
               type="text"
               style={{ width: `${blankAnswers[1][1]}rem` }}
@@ -113,7 +102,8 @@ function Problem3(props) {
           </div>
           <div className={styles.blankContainer}>
             <div> 바닥에 흘린 기름은</div>
-            <input className= {styles.input}
+            <input
+              className={styles.input}
               data-key="2"
               style={{ width: `${blankAnswers[2][1]}rem` }}
               type="text"
@@ -123,7 +113,8 @@ function Problem3(props) {
           </div>
           <div className={styles.blankContainer}>
             <div> 잘 열리지 않는 병뚜껑은 뚜껑에 </div>
-            <input className= {styles.input}
+            <input
+              className={styles.input}
               data-key="3"
               style={{ width: `${blankAnswers[3][1]}rem` }}
               type="text"
@@ -132,35 +123,40 @@ function Problem3(props) {
             <div>을 감싼 후 연다.</div>
           </div>
           <div className={styles.blankContainer}>
-            <input className= {styles.input}
+            <input
+              className={styles.input}
               data-key="4"
               style={{ width: `${blankAnswers[4][1]}rem ` }}
               type="text"
               onChange={handleInputChange}
             />
             <div>을 자극하는 채소(</div>
-            <input className= {styles.input}
+            <input
+              className={styles.input}
               data-key="5"
               style={{ width: `${blankAnswers[5][1]}rem` }}
               type="text"
               onChange={handleInputChange}
             />
             <div>, </div>
-            <input className= {styles.input}
+            <input
+              className={styles.input}
               data-key="6"
               style={{ width: `${blankAnswers[6][1]}rem` }}
               type="text"
               onChange={handleInputChange}
             />
             <div>) 는 </div>
-            <input className= {styles.input}
+            <input
+              className={styles.input}
               data-key="7"
               style={{ width: `${blankAnswers[7][1]}rem` }}
               type="text"
               onChange={handleInputChange}
             />
             <div>를 바른 후</div>
-            <input className= {styles.input}
+            <input
+              className={styles.input}
               data-key="8"
               style={{ width: `${blankAnswers[8][1]}rem` }}
               type="text"
