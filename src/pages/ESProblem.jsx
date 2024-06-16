@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Page from "../component/youngji/Page.jsx";
 
 const ESProblem = () => {
   return (
     <div>
-      ESProblem
+      <Page />
     </div>
-  )
-}
+  );
+};
 
 export default ESProblem;

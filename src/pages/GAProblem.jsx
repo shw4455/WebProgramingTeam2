@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Page from "../component/junha/Page.jsx";
 
 const GAProblem = () => {
   return (
     <div>
-      GAProblem
+      <Page />
     </div>
-  )
-}
+  );
+};
 
-export default GAProblem
+export default GAProblem;

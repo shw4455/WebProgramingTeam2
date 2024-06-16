@@ -5,14 +5,14 @@ import Days_of_week from "../component/Days_of_week";
 import Weather from '../component/Weather';
 import MySchedule from "../component/MySchedule";
 import NextDay from "../component/NextDay";
-import Box from "../component/Box";
+// import Box from "../component/Box";
 
 function Problem1(props) {
 
     return(
         <div>
              <div style={{marginLeft: '305px'}}>
-                <Box />
+                {/* <Box /> */}
             </div>
             
         <div style={{ textAlign: 'center' , marginLeft: '20px'}}>

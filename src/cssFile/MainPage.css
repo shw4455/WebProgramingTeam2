@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-.MainContainer {
+.MainPage {
+    align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    height: 90vh;
 }
 
-.MainContainer h1 {
+.MainPage h1 {
     font-family: 'Poppins', sans-serif;
 }
-
-
