@@ -17,14 +17,18 @@ function Problem2(props) {
   useEffect(() => {
     // 선택된 라벨 찾기
     const selectedLabel = document.querySelector(
-      `label[htmlFor="${selectedAMPM}"]`
+      // `label[htmlFor="${selectedAMPM}"]`, 왜 안 되는 걸까요?
+      `label[for ="${selectedAMPM}"]`
     );
-
+    console.log("selectedLabel : ", selectedLabel);
     // 전체 selected-label 클래스 제거 (선택된 상태 유지를 위해 선택 해제 시 필요)
     const labels = document.querySelectorAll(`.${styles.ampmRadioLabel}`);
     labels.forEach((label) =>
       label.classList.remove(styles.ampmRadioLabelSelected)
     );
+
+    console.log("labels : ", labels);
+    console.log("selectedAMPM : ", selectedAMPM);
 
     // 선택된 라벨에 클래스 추가
     if (selectedLabel) {
@@ -34,6 +38,8 @@ function Problem2(props) {
 
   const handleRadioChange = (event) => {
     setSelectedAMPM(event.target.value);
+
+    console.log("event.target : ", event.target);
   };
 
   const today = new Date();
@@ -58,7 +64,22 @@ function Problem2(props) {
     }
   };
 
-  const clockArrows = [
+  const clockHArrows = [
+    { id: 12 },
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
+    { id: 5 },
+    { id: 6 },
+    { id: 7 },
+    { id: 8 },
+    { id: 9 },
+    { id: 10 },
+    { id: 11 },
+  ];
+
+  const clockMArrows = [
     { id: 0 },
     { id: 1 },
     { id: 2 },
@@ -82,7 +103,7 @@ function Problem2(props) {
   const [currHArrow, setCurrHArrow] = useState(null); // 현재 선택된 요소
 
   const handleHArrowClicked = (event) => {
-    const time = event.target.id * 5;
+    const time = event.target.id;
     const newCurrHArrow = event.target;
     console.log("prevHArrow : ", prevHArrow);
     console.log("currHArrow : ", currHArrow);
@@ -95,7 +116,7 @@ function Problem2(props) {
     newCurrHArrow.classList.add(styles.show);
 
     // 상태값 업데이트
-    setClockTime({ ...clockTime, minutes: time });
+    setClockTime({ ...clockTime, hours: time });
     setPrevHArrow(currHArrow);
     setCurrHArrow(newCurrHArrow);
   };
@@ -112,22 +133,23 @@ function Problem2(props) {
   const [currMArrow, setCurrMArrow] = useState(null); // 현재 선택된 요소
 
   const handleMArrowClicked = (event) => {
-    const time = event.target.id;
+    const time = event.target.id * 5;
     const newCurrMArrow = event.target;
     console.log("prevMArrow : ", prevMArrow);
     console.log("currMArrow : ", currMArrow);
-    // 이전 선택된 요소 투명도 조절
-    if (prevMArrow) {
-      prevMArrow.classList.remove(styles.show);
-    } // useEffect를 사용하면서 없어도 되는 부분
 
     // 현재 선택된 요소 투명도 조절
     newCurrMArrow.classList.add(styles.show);
 
     // 상태값 업데이트
-    setClockTime({ ...clockTime, hours: time });
+    setClockTime({ ...clockTime, minutes: time });
     setPrevMArrow(currMArrow);
     setCurrMArrow(newCurrMArrow);
+
+    // 이전 선택된 요소 투명도 조절
+    if (prevMArrow) {
+      prevMArrow.classList.remove(styles.show);
+    } // useEffect를 사용하면서 없어도 되는 부분
   };
 
   // `useEffect` Hook을 사용하여 이전 선택된 요소 투명도 제어
@@ -171,7 +193,7 @@ function Problem2(props) {
                     checked={selectedAMPM === "pm"}
                     onChange={handleRadioChange}
                   />
-                  <label htmlFor="pm" className={styles.ampmRadioLabel}>
+                  <label for="pm" className={styles.ampmRadioLabel}>
                     오후
                   </label>
                 </div>
@@ -204,7 +226,7 @@ function Problem2(props) {
           <div id={styles.timeImageContainer}>
             <img id={styles.timeImage} src={clockImg} alt=""></img>
             <div id={styles.clockPivot}>
-              {clockArrows.map((arrow) => (
+              {clockMArrows.map((arrow) => (
                 <div
                   id={arrow.id}
                   className={styles.clockArrowContainer}
@@ -220,7 +242,7 @@ function Problem2(props) {
                   ></img>
                 </div>
               ))}
-              {clockArrows.map((arrow) => (
+              {clockHArrows.map((arrow) => (
                 <div
                   id={arrow.id}
                   className={styles.clockArrowContainer}
