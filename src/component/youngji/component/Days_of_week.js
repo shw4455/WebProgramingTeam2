@@ -1,37 +1,4 @@
-// import React, { useState } from "react";
 
-
-// function Days_of_week(props) {
-// const[value, setValue] = useState('요일을 입력하세요.');
-
-//     const handleChange = (event) =>{
-//         setValue(event.target.value.toUpperCase());
-//     }
-    
-//     const days_of_weekSubmit = (event) => {
-
-//         event.preventDefault();
-        
-//     }
-//     // console.log(value);
-
-//     if (typeof setValue === 'number' && isNaN(setValue)){
-//         alert("숫자를 입력하시오");
-//     }
-
-//     return (
-//         <form onSubmit={days_of_weekSubmit}>
-//             <label>
-                 
-//             요일: <input type="text" value={value} onChange={handleChange}></input>
-            
-//             </label>
-//             <button type="submit">제출</button>
-//         </form>
-//     )
-// }
-
-// export default Days_of_week;
 
 import React, { useState } from "react";
 
