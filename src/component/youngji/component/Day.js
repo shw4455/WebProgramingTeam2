@@ -1,34 +1,3 @@
-// import React, { useState } from "react";
-
-
-
-// function Day(props) {
-// const[value, setValue] = useState('날짜를 입력하세요.');
-
-//     const handleChange = (event) =>{
-//         setValue(event.target.value.toUpperCase());
-//     }
-    
-//     const daySubmit = (event) => {
-
-//         event.preventDefault();
-        
-//     }
-//     // console.log(value);
-
-//     return (
-//         <form onSubmit={daySubmit}>
-//             <label>
-                 
-//             날짜: <input type="text" value={value} onChange={handleChange}></input>
-
-//             </label>
-//             <button type="submit">제출</button>
-//         </form>
-//     )
-// }
-
-// export default Day;
 
 import React, { useState } from "react";
 
@@ -37,17 +6,7 @@ function Day(props) {
     const [error, setError] = useState('');
 
     const handleChange = (event) => {
-        // const inputValue = event.target.value;
         setValue(event.target.value.toUpperCase());
-
-        // // 입력값이 숫자이고, 4자리인지 확인
-        // if (/^\d{1,4}$/.test(inputValue)) {
-        //     setValue(inputValue);
-        //     setError('');
-        // } else {
-        //     setError('4자리 숫자만 입력 가능합니다.');
-        // }
-    }
     
     const daySubmit = (event) => {
         event.preventDefault();
