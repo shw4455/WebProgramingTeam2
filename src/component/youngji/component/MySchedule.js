@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 
 function MyDayAndSchedule() {
-    // State for MyDay
     const [place, setPlace] = useState('');
     const [person, setPerson] = useState('');
     const [thing, setThing] = useState('');
     const [spent, setSpent] = useState('');
     const [news, setNews] = useState('');
 
-    // Handlers for MyDay
     const handleChange_1 = (event) => setPlace(event.target.value.toUpperCase());
     const handleChange_2 = (event) => setPerson(event.target.value.toUpperCase());
     const handleChange_3 = (event) => setThing(event.target.value.toUpperCase());
@@ -21,13 +19,11 @@ function MyDayAndSchedule() {
     const spentSubmit = (event) => event.preventDefault();
     const newsSubmit = (event) => event.preventDefault();
 
-    // State for MySchedule
     const [morning, setMorning] = useState('');
     const [breakfast, setBreakfast] = useState('');
     const [afternoon, setAfternoon] = useState('');
     const [evening, setEvening] = useState('');
 
-    // Handlers for MySchedule
     const handleMorningChange = (event) => setMorning(event.target.value);
     const handleBreakfastChange = (event) => setBreakfast(event.target.value);
     const handleAfternoonChange = (event) => setAfternoon(event.target.value);
@@ -108,7 +104,6 @@ function MyDayAndSchedule() {
                 </tbody>
             </table>
             
-            {/* MySchedule Section */}
             <table border={1} style={{ width: '60%', borderCollapse: 'collapse' }}>
                 <thead>
                     <tr>
