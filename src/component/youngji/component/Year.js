@@ -16,7 +16,6 @@ const [error, setError] = useState('');
             setError('4자리 숫자를 입력해주세요.');
         } else {
             setError('');
-            // 제출 성공 시의 로직
             console.log('입력된 숫자:', value);
         }
         
