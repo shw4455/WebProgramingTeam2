@@ -7,9 +7,7 @@ function Weather (props) {
     ]
     const [circlePosition, setCirclePosition] = useState({ x: 0, y: 0 });
     
-    // 동그라미를 클릭할 때 위치를 설정하는 함수
     const handleCircleClick = (event) => {
-        // 클릭한 위치에 따라 동그라미 위치 업데이트
         const x = event.nativeEvent.offsetX;
         const y = event.nativeEvent.offsetY;
         setCirclePosition({ x, y });
